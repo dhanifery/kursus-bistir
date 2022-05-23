@@ -33,7 +33,7 @@ CREATE TABLE `tbl_bank` (
   `nama_bank` varchar(255) DEFAULT NULL,
   `no_rek` varchar(255) DEFAULT NULL,
   `atas_nama` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `tbl_bank`
@@ -52,15 +52,15 @@ INSERT INTO `tbl_bank` (`id_bank`, `nama_bank`, `no_rek`, `atas_nama`) VALUES
 CREATE TABLE `tbl_instruktur` (
   `id_instruktur` int NOT NULL,
   `id_user` int DEFAULT NULL,
-  `username_instr` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
-  `email_instr` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `username_instr` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `email_instr` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `TTL` varchar(50) DEFAULT NULL,
   `no_telp` varchar(20) DEFAULT NULL,
   `JK` enum('Male','Female') DEFAULT NULL,
   `honor` int DEFAULT NULL,
-  `image_instr` varchar(256) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
-  `deskripsi_instr` varchar(256) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `image_instr` varchar(256) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `deskripsi_instr` varchar(256) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `tbl_instruktur`
@@ -95,7 +95,7 @@ CREATE TABLE `tbl_jadwal` (
   `no_rek` varchar(255) DEFAULT NULL,
   `status_jadwal` int DEFAULT NULL,
   `status_bayar` int DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `tbl_jadwal`
@@ -116,9 +116,9 @@ CREATE TABLE `tbl_mobil` (
   `jenis_mobil` int DEFAULT NULL,
   `no_plat` varchar(50) DEFAULT NULL,
   `no_mesin` varchar(50) DEFAULT NULL,
-  `deskripsi_mobil` varchar(256) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `deskripsi_mobil` varchar(256) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `image_mobil` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `tbl_mobil`
@@ -141,9 +141,9 @@ CREATE TABLE `tbl_paket` (
   `nama_paket` varchar(100) DEFAULT NULL,
   `byk_pertemuan` varchar(100) DEFAULT NULL,
   `harga` varchar(100) DEFAULT NULL,
-  `deskripsi_paket` text CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+  `deskripsi_paket` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci,
   `image` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `tbl_paket`
@@ -163,14 +163,14 @@ INSERT INTO `tbl_paket` (`id_paket`, `id_mobil`, `nama_paket`, `byk_pertemuan`, 
 CREATE TABLE `tbl_peserta` (
   `id_peserta` int NOT NULL,
   `id_user` int DEFAULT NULL,
-  `username_peserta` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
-  `email_peserta` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `username_peserta` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `email_peserta` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `TTL` varchar(256) DEFAULT NULL,
   `alamat` varchar(50) DEFAULT NULL,
   `no_telp` varchar(20) DEFAULT NULL,
   `JK` enum('Male','Female') DEFAULT NULL,
-  `image_peserta` varchar(256) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `image_peserta` varchar(256) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `tbl_peserta`
@@ -190,7 +190,7 @@ CREATE TABLE `tbl_rinci_jadwal` (
   `kode_jadwal` varchar(255) DEFAULT NULL,
   `id_peserta` int DEFAULT NULL,
   `id_paket` int DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `tbl_rinci_jadwal`
@@ -214,7 +214,7 @@ CREATE TABLE `tbl_user` (
   `is_active` int DEFAULT NULL,
   `level_user` int DEFAULT NULL,
   `date_created` int DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `tbl_user`
