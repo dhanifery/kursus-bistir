@@ -55,14 +55,14 @@ class Daftar_kursus extends CI_Controller {
 
         public function add_peserta()
         {
-                $this->form_validation->set_rules('username', 'Username', 'required|min_length[3]',
+                $this->form_validation->set_rules('username_peserta', 'Username', 'required|min_length[3]',
                 array('required'=>'%s Harus Diisi !!!!',
                 'min_length'=> '%s Minimal 3 karakter !'
         ));
                 $this->form_validation->set_rules('TTL', 'Tanggal Lahir', 'required',
                 array('required'=>'%s Harus Diisi !!!!'
         ));
-                $this->form_validation->set_rules('email', 'Email', 'required|is_unique[tbl_peserta.email]',
+                $this->form_validation->set_rules('email_peserta', 'Email', 'required|is_unique[tbl_peserta.email_peserta]',
                 array('required'=>'%s Harus Diisi !!!!',
                 'is_unique'=>'%s Sudah terdaftar....!'
         ));
@@ -101,8 +101,8 @@ class Daftar_kursus extends CI_Controller {
                         $this->load->library('image_lib', $config);    
                         $data = array(
                                 'id_user' =>$this->session->userdata('id_user'),
-                                'username' => $this->input->post('username'),
-                                'email' => $this->input->post('email'),
+                                'username_peserta' => $this->input->post('username_peserta'),
+                                'email_peserta' => $this->input->post('email_peserta'),
                                 'TTL' => $this->input->post('TTL'),
                                 'alamat' => $this->input->post('alamat'),
                                 'no_telp' => $this->input->post('no_telp'),

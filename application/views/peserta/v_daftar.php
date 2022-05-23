@@ -57,9 +57,9 @@
                                                 </div>                
                                                 <div class="form-daftar">
                                                         <h3>Form pendaftaran</h3>
-                                                        <input type="text" class="form-input" name="username" value="<?= set_value('username')?>"placeholder="Username" required>
+                                                        <input type="text" class="form-input" name="username_peserta" value="<?= set_value('username_peserta')?>"placeholder="Username" required>
                                                         <div class="form2">
-                                                                <input type="email" class="form-input" name="email" value="<?= set_value('email')?>" placeholder="Email" >
+                                                                <input type="email" class="form-input" name="email_peserta" value="<?= set_value('email_peserta')?>" placeholder="Email" >
                                                                 <div hidden class="hidden">
                                                                         <input type="date" class="form-date">
                                                                 </div>
