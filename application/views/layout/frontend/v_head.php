@@ -18,6 +18,6 @@
         <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
         <script src="//cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
         <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
-        <link rel="stylesheet" href="<?= base_url()?>/assets/css/homepeserta.css">
+        <link rel="stylesheet" href="<?= base_url()?>/assets/css/home-peserta.css">
         <link rel="stylesheet" href="<?= base_url()?>/assets/css/alert.css">
 </head>

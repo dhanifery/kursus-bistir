@@ -8,6 +8,7 @@ class My_jadwal extends CI_Controller {
 	{
 		parent::__construct();
 		$this->user_login->proteksi_halaman();
+                $this->load->library('Ciqrcode');
 		$this->load->model(['m_user','m_home','m_peserta','m_paket','m_jadwal','m_instruktur']);
 	}
 
@@ -112,6 +113,18 @@ class My_jadwal extends CI_Controller {
 			'isi' => 'instruktur/v_detail_jadwal',
 		);
 		$this->load->view('layout/frontend/v_wrapper_frontend', $data ,FALSE);
+        }
+
+        public function qr_code($kodenya)
+        {
+                // render qr code dengan format gambar png
+                Qrcode::png(
+                        $kodenya,
+                        $outfile = false,
+                        $level = QR_ECLEVEL_H,
+                        $size =  15,
+                        $margin =1
+                );
         }
 }
 

@@ -36,7 +36,7 @@ class M_jadwal extends CI_Model {
                 $this->db->where('status_bayar = 1');
                 $this->db->order_by('id_jadwal', 'desc'); 
                 return $this->db->get()->result();
-        }
+        } 
 
         public function get_jadwal_peserta_pending()
         { 

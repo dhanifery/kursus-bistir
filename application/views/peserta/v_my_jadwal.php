@@ -6,10 +6,26 @@
                                                 
                                         </div>
                                         <div class="images">
+                                        <div class="gambar-qrcode">
+
                                                 <?php 
                                                 foreach ($jadwal as $key => $value) {?>
-                                                        <img class="showImage" src="<?= base_url('assets/images/bukti_bayar/'.$value->bukti_bayar)?>">   
+                                                        <div class="deskripsi">
+                                                                <h1 class="des-trans"><b>Kode-Transaksi :</b> <?=$value->kode_jadwal?></h1>
+                                                                <label for="" class="text"><b>Atas nama : </b></label>
+                                                                <p><?= $value->atas_nama?></p>
+                                                                <label for="" class="text"><b>No.Rek : </b></label>
+                                                                <p><?= $value->no_rek?></p>
+                                                                <label for="" class="text"><b>Bank : </b></label>
+                                                                <p><?= $value->bank?></p>
+                                                                <label for="" class="text"><b>Jumlah transfer : </b></label>
+                                                                <p>Rp. <?= number_format($value->total_bayar,0)?></p>
+                                                        </div>
+                                                        <div class="qrcode">
+                                                                <img class="showImage code-image" src="<?= base_url('assets/images/bukti_bayar/'.$value->bukti_bayar)?>"> 
+                                                        </div>
                                                 <?php }?>
+                                        </div>
                                         </div>
                                         <div class="next-btn navigation">
                                                 
