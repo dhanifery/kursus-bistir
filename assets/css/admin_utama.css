@@ -283,6 +283,12 @@ main .insights {
      gap: 1.6rem;
 }
 
+main .insights-laporan{
+     gap: 0.5rem;
+     grid-template-columns: repeat(2, 1fr);
+
+}
+
 main .insights > div{
      background: var(--color-white);
      padding: var(--card-padding);
@@ -383,6 +389,56 @@ main .insights .progress .number .counter span{
 main .insight small{
      margin-top: 1.3rem;
      display: block;
+}
+
+/* =============== LAPORAN ====================== */
+
+.sales .heading{
+     display: flex;
+     gap: 1rem;
+     justify-content: space-between;
+     align-items: center;
+}
+.sales .heading h3{
+     text-transform: uppercase;
+}
+
+.middle .center{
+     width: 100%;
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     gap: 0.5rem;
+     margin-top: 1rem;
+}
+.content-laporan{
+     width: 100%;
+}
+.label-laporan{
+     font-size: 13px;
+     font-weight: 500;
+     margin: 0.5rem;
+     margin-bottom: 1rem;
+}
+
+.content-laporan select.input-laporan{
+     border-radius: none;
+     width: 100%;
+     padding: 0.5rem 1rem;
+     border-radius: 5px;
+     background-color: var(--bg-color-3);
+     color: var(--color-dark);
+
+}
+.btn-laporan{
+     width: 100%;
+     margin: 1rem 0;
+     padding: 0.5rem 1rem;
+     border-radius: 5px;
+     background-color: var(--color-primary);
+     color: #fff;
+     cursor: pointer;
+
 }
 
 /* =============== RECENT ORDERS =============== */

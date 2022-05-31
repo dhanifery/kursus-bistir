@@ -75,7 +75,7 @@
                                                                                 </td> 
                                                                         <?php } elseif($value->status_jadwal == 2 & $value->status_bayar == 1) {?>
                                                                                 <td>
-                                                                                        <p class="btn btn-jadwal jadwal-danger">QR Code</p>        
+                                                                                        <button class="btn btn-jadwal jadwal-danger">QR Code</button>        
                                                                                 </td>
                                                                         <?php }else {?>
                                                                                 <td>

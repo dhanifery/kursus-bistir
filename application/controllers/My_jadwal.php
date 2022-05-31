@@ -115,6 +115,18 @@ class My_jadwal extends CI_Controller {
 		$this->load->view('layout/frontend/v_wrapper_frontend', $data ,FALSE);
         }
 
+        public function detail_jadwal_peserta($id_jadwal = NULL)
+        {
+                $data = array(
+			'title' => 'B I S T I R | Detail Jadwal ',
+			'user' => $this->m_user->cek_data(['email' => $this->session->userdata('email')])->row_array(),
+                        'jadwal'=>$this->m_jadwal->detail_jadwal($id_jadwal),
+                        'paket'=>$this->m_paket->get_all_data(),
+			'isi' => 'peserta/v_detail_jadwal',
+		);
+		$this->load->view('layout/frontend/v_wrapper_frontend', $data ,FALSE);
+        }
+
         public function qr_code($kodenya)
         {
                 // render qr code dengan format gambar png

@@ -19,7 +19,7 @@ class M_peserta extends CI_Model {
                 $this->db->order_by('id_peserta', 'desc');
                 return $this->db->get()->result();
         }
- 
+
         // tambah data
         public function add($data)
         {

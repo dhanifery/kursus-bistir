@@ -53,7 +53,9 @@
                          }?>"><span class="material-icons-sharp">insights</span>
                               <h3>Jadwal</h3>
                          </a>
-                         <a href="#"><span class="material-icons-sharp">receipt_long</span>
+                         <a href="<?= base_url('laporan')?>"  class="<?php if($this->uri->segment(1)== 'laporan'){
+                         echo "active";
+                         }?>"><span class="material-icons-sharp">receipt_long</span>
                               <h3>Laporan Transaksi</h3>
                          </a>
                          <a href="<?= base_url('auth/logout_user');?>"><span class="material-icons-sharp">logout</span>

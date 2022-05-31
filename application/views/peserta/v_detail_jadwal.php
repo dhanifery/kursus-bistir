@@ -6,7 +6,7 @@
                                                 
                                         </div>
                                         <div class="images">
-                                                        <img class="showImage" src="<?= base_url('assets/images/gambar/'.$jadwal->image_peserta)?>">   
+                                                        <img class="showImage" src="<?= base_url('assets/images/gambar/'.$jadwal->image_instr)?>">   
                                         </div>
                                         <div class="next-btn navigation">
                                                 
@@ -40,26 +40,26 @@
                                         echo '</h5></div>';
                                 }
 
-                                echo form_open_multipart('daftar_kursus/add_peserta')?>
+                                echo form_open('')?>
 
                                         
                                         <div class="portfolio-gallery galeri-daftar">
                                                 <div class="mix prt-card card-kursus">
                                                         <div class="prt-image image-kursus">
-                                                                <img class="showImage" src="<?= base_url('assets/images/gambar/'.$jadwal->image_peserta)?>">   
+                                                                <img class="showImage" src="<?= base_url('assets/images/gambar/'.$jadwal->image_instr)?>">   
                                                                 <div class="prt-overlay">
                                                                         <span class="prt-icon zoom-icon" style="--i: 0s">
                                                                                 <i class="uil uil-search-plus"></i>
                                                                         </span>
                                                                 </div>
                                                         </div>
-                                                </div>                
+                                                </div>               
                                                 <div class="form-daftar">
                                                         <h3>Detail Jadwal</h3>
                                                         <input type="text" class="form-input input-primary" name="username" value="Kode Jadwal : <?= $jadwal->kode_jadwal?>"placeholder="Username" readonly>
                                                         <div class="form2">
-                                                                <input type="text" class="form-input" name="username_peserta" value="<?= $jadwal->username_peserta?>" placeholder="Email" readonly>
-                                                                <input type="text" class="form-input" name="username_instr" value="<?= $jadwal->username_instr?>" placeholder="Email" readonly>
+                                                                <input type="text" class="form-input" name="username_peserta" value="Peserta : <?= $jadwal->username_peserta?>" placeholder="Email" readonly>
+                                                                <input type="text" class="form-input" name="username_instr" value="Instruktur : <?= $jadwal->username_instr?>" placeholder="Email" readonly>
                                                         </div>
                                                         <input type="text" class="form-input" name="username" 
                                                         value="<?= $jadwal->nama_paket?> (<?= $jadwal->byk_pertemuan?>)"placeholder="Username" readonly>
@@ -84,7 +84,7 @@
                                                                 <?php }?>
                                                         
                                                         </select>
-                                                        <a href="<?= base_url('jadwal/jadwal_instruktur_aktif/')?>" class="btn">Back</a>
+                                                        <a href="<?= base_url('jadwal/jadwal_peserta/')?>" class="btn">Back</a>
                                                 </div>
                                         </div>
                                 </div>                                          

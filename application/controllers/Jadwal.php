@@ -40,7 +40,7 @@ class Jadwal extends CI_Controller {
 				'isi' => 'peserta/v_my_jadwal',
 			);
 		}
-		elseif($this->m_jadwal->get_jadwal_peserta_aktif()){
+		elseif($this->m_jadwal->get_jadwal_peserta_aktif()){ 
 			$data = array( 
 				'title' => 'B I S T I R | My Jadwal ',
 				'user' => $this->m_user->cek_data(['email' => $this->session->userdata('email')])->row_array(),
@@ -52,6 +52,7 @@ class Jadwal extends CI_Controller {
 			$data = array( 
 				'title' => 'B I S T I R | My Jadwal ',
 				'user' => $this->m_user->cek_data(['email' => $this->session->userdata('email')])->row_array(),
+				'peserta'=> $this->m_peserta->get_peserta(),
 				'isi' => 'peserta/v_my_jadwal_off',
 			);
 		}
@@ -154,7 +155,7 @@ class Jadwal extends CI_Controller {
 			'jam_latihan' => $this->input->post('jam_latihan'),
 			'total_bayar' => $this->input->post('total_bayar'),
 			'status_bayar' => '0',
-			'tgl_jadwal'=> time(),
+			'tgl_jadwal'=> date('Y-m-d'),
 			'status_jadwal' => '0',
 			
 		);

@@ -91,12 +91,12 @@
                                                                         if($value->status_jadwal == 0){?>
                                                                                 <span class="danger">Pending</span>
                                                                 <?php }else{?>
-                                                                                <span class="warning">Aktif</span>
+                                                                                <span class="primary">Aktif</span>
                                                                 <?php } ?>
                                                         </td>
                                                         <?php }?>
                                                         
-                                                        <?php
+                                                        <?php 
                                                                 if ($value->status_jadwal == 0) {?>
                                                         <td>
                                                                 <a href="<?= base_url('my_jadwal/bayar/'.$value->id_jadwal)?>" class="btn btn-jadwal">Bayar</a>

@@ -26,7 +26,15 @@
                                                 <tbody>       
                                                 <tr>
                                                        <td>Oops , Anda belum mengisi form pendaftaran....
-                                                               <br><a href="<?= base_url('daftar_kursus/daftar_peserta')?>" class="btn btn-jadwal">Daftar</a>
+                                                               <?php
+                                                                foreach ($peserta as $key => $value) {?>
+                                                                        <?php
+                                                                                if ($value->id_user != ""){?>
+                                                                                <br><a href="<?= base_url('jadwal/daftar_jadwal_peserta')?>" class="btn btn-jadwal">Daftar Jadwal</a>                           
+                                                                        <?php } else {?>
+                                                                                <br><a href="<?= base_url('daftar_kursus/daftar_peserta')?>" class="btn btn-jadwal">Daftar</a>                           
+                                                                        <?php }?>
+                                                                <?php }?>
                                                        </td>
                                                 </tr>                      
                                                 </tbody>

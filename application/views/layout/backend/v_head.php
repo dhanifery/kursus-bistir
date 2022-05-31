@@ -12,7 +12,7 @@
           <link rel="stylesheet" href="<?= base_url('assets/css/alert.css') ?>">
 
           <!-- CSS -->
-          <link rel="stylesheet" href="<?= base_url()?>assets/css/admin.css">
+          <link rel="stylesheet" href="<?= base_url()?>assets/css/admin_utama.css">
           <!-- DATA TABLES -->
           <!-- <link rel="stylesheet" href="//cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css"> -->
           <link rel="stylesheet" href="<?= base_url()?>assets/css/datatable.css">
