@@ -842,7 +842,6 @@ body.open .hamburger .bar:last-child{
         display: grid;
         grid-template-columns: 1fr 1.3fr;
         column-gap: 6rem;
-        margin-top: -2rem;
         align-items: center;
 }
 
@@ -971,6 +970,10 @@ body.open .hamburger .bar:last-child{
         z-index: -1;
 }
 
+.testimonials .section-background .square{
+        left: 70%;
+        position: absolute;
+}
 /*======================= Portfolio section styling =======================*/
 
 .portfolio .container{
@@ -1221,7 +1224,8 @@ body.open .hamburger .bar:last-child{
 }
 
 .client img{
-        width: 100%;
+        width: 80px;
+        height: 80px;
         border-radius: 50%;
 }
 
@@ -1272,7 +1276,7 @@ body.open .hamburger .bar:last-child{
 }
 
 .testimonials-title{
-        padding-left: 5rem;
+        padding-left: 2rem;
 }
 
 .testimonials-title > *{
@@ -1437,7 +1441,6 @@ textarea.form-input{
 
 /*======================= footer styling =======================*/
 
-
 footer{
         padding: 0 4rem 0 4rem;
 }
@@ -1449,24 +1452,25 @@ footer .container{
         flex-wrap: wrap;
 }
 
-footer .social-media{
+footer ul{
         display: flex;
 }
-
-.social-link{
+.media{
         width: 35px;
         height: 35px;
+        background-color: var(--bg-color-1);
         border-radius: 50%;
         margin-left: 1rem;
-        background-color: var(--bg-color-1);
         color: var(--text-color);
         display: flex;
         align-items: center;
         justify-content: center;
         transition: 0.3s;
-}
 
-.social-link:hover{
+
+
+}
+.media:hover{
         color: var(--main-color-1);
 }
 
@@ -1520,6 +1524,10 @@ footer .social-media{
 
         .nav-link{
                 font-size: 0.7rem;
+        }
+        .testimonials .section-background .square{
+                left: 64%;
+                position: absolute;
         }
         
         .showcase-area{

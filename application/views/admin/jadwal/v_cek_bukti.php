@@ -9,24 +9,34 @@
                     </div>
                     <div class="deskripsi">
                          <h3>Tanggal transaksi :</h3>
-                         <p><?= date('d F Y', $jadwal->tgl_jadwal)?></p>
+                         <p><?= $jadwal->tgl_jadwal;?></p>
                     </div>
                </div>
                          <div action="" class="contact-form">
                          <?php 
                          
                          echo form_open_multipart('') ?>
-                              <h3>My Profil</h3>
-                              <input type="text" class="form-input"  name="atas_nama" value="Kode Transaksi : <?= $jadwal->kode_jadwal?>" autocomplete="off" placeholder="Username" readonly>
+                              <h3>Cek Bukti</h3>
+                              <label for="">Kode Transaksi*</label>
+                              <input type="text" class="form-input form-jadwal"  name="atas_nama" value="Kode Transaksi : <?= $jadwal->kode_jadwal?>" autocomplete="off" placeholder="Username" readonly>
+
+                              <label for="">Atas Nama*</label>
                               <input type="text" class="form-input"  name="atas_nama" value="<?= $jadwal->atas_nama?>" autocomplete="off" placeholder="Username" readonly>
                               <div class="form2">
-                                <input type="text" class="form-input"  name="password" value="<?= $jadwal->bank?>" autocomplete="off" placeholder="Username" readonly>
-                                <input type="text" class="form-input"   value="<?= $jadwal->no_rek?>" autocomplete="off" placeholder="Email" readonly>
+                                   <div class="form-2">
+                                        <label for="">Bank*</label>
+                                        <input type="text" class="form-input"  name="password" value="<?= $jadwal->bank?>" autocomplete="off" placeholder="Username" readonly>
+                                   </div>
+                                   <div class="form-2">
+                                        <label for="">No.Rek*</label>
+                                        <input type="text" class="form-input"   value="<?= $jadwal->no_rek?>" autocomplete="off" placeholder="Email" readonly>
+                                   </div>
                               </div>
-                              <input type="text" class="form-input"   value="<?= $jadwal->total_bayar?>" autocomplete="off" placeholder="Email" readonly>
+                              <label for="">Jumlah Transfer*</label>
+                              <input type="text" class="form-input"   value="Rp.<?= number_format($jadwal->total_bayar,0)?>" autocomplete="off" placeholder="Email" readonly>
                               <div class="form3">
-                                   <a  class="btn btn-password btn-sm" href="<?= base_url('jadwal_admin')?>">
-                                             <h3>Back</h3>
+                                   <a  class="btn" href="<?= base_url('jadwal_admin')?>">
+                                             <p>Back</p>
                                    </a>
                               </div>
                          </div>

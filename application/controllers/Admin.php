@@ -8,7 +8,7 @@ class Admin extends CI_Controller {
 	{
 		parent::__construct();
 		$this->user_login->proteksi_halaman();
-		$this->load->model('m_user'); 
+		$this->load->model(['m_user','m_jadwal','m_home']); 
 
 	}
 	
@@ -17,6 +17,10 @@ class Admin extends CI_Controller {
 		$data = array(
 			'title' => 'Dashboard',
 			'admin' => $this->m_user->cek_data(['email' => $this->session->userdata('email')])->row_array(),
+			'active' => $this->m_jadwal->get_data_active(),
+			'total_peserta' => $this->m_home->total_peserta(),
+			'total_instruktur' => $this->m_home->total_instruktur(),
+			'total_jadwal' => $this->m_home->total_jadwal(),
 			'isi' => 'admin/v_admin',
 		);
 		$this->load->view('layout/backend/v_wrapper_backend', $data ,FALSE);
@@ -144,4 +148,93 @@ class Admin extends CI_Controller {
 		  );
 		  $this->load->view('layout/backend/v_wrapper_backend', $data ,FALSE);        
 	  }
+
+	
+
+	public function kantor()
+	{
+		$data = array(
+			'title' => 'B I S T I R',
+			'sub_title' => 'Kantor',
+			'admin' => $this->m_user->cek_data(['email' => $this->session->userdata('email')])->row_array(),
+			'kantor' => $this->m_home->get_kantor(),
+			'isi' => 'admin/kantor/v_kantor',
+		);
+		$this->load->view('layout/backend/v_wrapper_backend', $data ,FALSE);
+	}
+
+	public function edit_kantor($id_kantor = NULL)
+	{
+		$this->form_validation->set_rules('alamat', 'Alamat', 'required',
+                array('required'=>'%s Harus Diisi !!!!'
+        ));
+		$this->form_validation->set_rules('no_telp', 'No Telp', 'required',
+		array('required'=>'%s Harus Diisi !!!!'
+	));
+		$this->form_validation->set_rules('deskripsi', 'Deskripsi Kantor', 'required',
+		array('required'=>'%s Harus Diisi !!!!'
+	));
+
+        if($this->form_validation->run() == TRUE)
+        {
+                $config['upload_path'] = './assets/images/';
+                $config['allowed_types'] = 'gif|jpg|png|jpeg|PNG|ico';
+                $config['max_size']     = '5000';
+                $config['file_name'] = 'img' . time();
+                $this->upload->initialize($config);
+
+                $field_name = "image";
+                if (!$this->upload->do_upload($field_name)) {	
+                        $data = array(
+                                'id_kantor' => $id_kantor,
+                                'alamat' => $this->input->post('alamat'),
+                                'no_telp' => $this->input->post('no_telp'),
+                                'deskripsi' => $this->input->post('deskripsi'),
+          
+                        );
+                        $this->m_home->update_kantor($data);
+                        $this->session->set_flashdata('pesan', 'Profil Kantor berhasil diedit !!!!');
+                        redirect('admin/kantor');
+                }else{
+                        // Timpa gambar lama jadi baru
+                        $kantor = $this->m_home->get_id_kantor($id_kantor);
+                        if ($kantor->image != "" ) {
+                                unlink('./assets/images/'.$kantor->image);
+                        }
+                        $upload_data = array('uploads' => $this->upload->data());
+                        $config['image_library'] = 'gd2';
+                        $config['source_image'] = './assets/images/'.$upload_data['uploads']['file_name'];
+                        $this->load->library('image_lib', $config);    
+                        $data = array(
+                                'id_kantor' => $id_kantor,
+				'alamat' => $this->input->post('alamat'),
+                                'no_telp' => $this->input->post('no_telp'),
+                                'deskripsi' => $this->input->post('deskripsi'),
+                                'image' => $upload_data['uploads']['file_name'],
+                                );
+                        $this->m_home->update_kantor($data);
+                        $this->session->set_flashdata('pesan', 'Profil Kantor berhasil diedit !!!!');
+                        redirect('admin/kantor');
+                        
+                }
+
+                $data = array(
+			'title' => 'B I S T I R',
+			'sub_title' => 'Kantor',
+			'admin' => $this->m_user->cek_data(['email' => $this->session->userdata('email')])->row_array(),
+                        'error_upload' => $this->upload->display_errors(),
+			'isi' => 'admin/kantor/v_edit_kantor',
+
+                );
+                $this->load->view('layout/backend/v_wrapper_backend', $data,FALSE);
+        }
+		$data = array(
+			'title' => 'B I S T I R',
+			'sub_title' => 'Kantor',
+			'admin' => $this->m_user->cek_data(['email' => $this->session->userdata('email')])->row_array(),
+			'kantor' => $this->m_home->get_id_kantor($id_kantor),
+			'isi' => 'admin/kantor/v_edit_kantor',
+		);
+		$this->load->view('layout/backend/v_wrapper_backend', $data ,FALSE);
+	}
 }

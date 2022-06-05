@@ -32,18 +32,30 @@
                          
                          echo form_open_multipart('user/update/'.$user->id_user) ?>
                               <h3>My Profil</h3>
+                              <label for="">Username*</label>
                               <input type="text" class="form-input"  name="nama_user" value="<?= $user->nama_user?>" autocomplete="off" placeholder="Username" readonly>
+                              
+                              <label for="">Email*</label>
                               <input type="text" class="form-input"   value="<?= $user->email?>" autocomplete="off" placeholder="Email" readonly>
                               <div class="form2">
-                                <input type="password" class="form-input"  name="password" value="<?= $user->password?>" autocomplete="off" placeholder="Username" readonly>
-                                <p class="form-input">
-                                <?php
-                                if ($user->level_user == 1) {?>
-                                        Admin
-                                <?php }?>
-                                </p>
+                                   <div class="form-2">
+                                        <label for="">Passwod*</label>
+                                        <input type="password" class="form-input"  name="password" value="<?= $user->password?>" autocomplete="off" placeholder="Username" readonly>
+                                   </div>
+                                   <div class="form-2">
+                                        <label for="">Level User*</label>
+                                        <select name="" id="">
+                                             <option value="">
+                                                  <?php
+                                                  if ($user->level_user == 1) {?>
+                                                            Admin
+                                                  <?php }?>
+                                             </option>
+                                        </select>
+                                   </div>
                               </div>
-                              <input type="text" class="form-input"   value="Member Since : <?= date('d F Y', $user->date_created)?>" autocomplete="off" placeholder="Email" readonly>
+                              <label for="">Member Sejak*</label>
+                              <input type="text" class="form-input"   value="<?= date('d F Y', $user->date_created)?>" autocomplete="off" placeholder="Email" readonly>
                               <div class="form3">
                                    <a href="<?= base_url('admin/edit_profil/' .$user->id_user)?>" class="btn"><p>Edit Profil</p></a>
                                    <a  class="btn btn-password btn-sm" href="<?= base_url('admin')?>">

@@ -18,7 +18,9 @@
                          <thead>
                               <tr>
                                    <th>No</th>
-                                   <th>Nama Peserta</th>
+                                   <th>Nama Instruktur</th>
+                                   <th>Email</th>
+                                   <th>Telepon</th>
                                    <th>Jenis Kelamin</th>
                                    <th>Image</th>
                                    <th>Option</th>
@@ -30,14 +32,16 @@
                               foreach ($instruktur as $key => $value) {?>        
                               <tr>
                                    <td><?= $no++?></td>
-                                   <td><?= $value->username_instr;?></td>
+                                   <td style="font-weight: bold;"><?= $value->username_instr;?></td>
+                                   <td><?= $value->email_instr;?></td>
+                                   <td><?= $value->no_telp;?></td>
                                    <td><?= $value->JK;?></td>
                                    <td style="width:70px ;">
                                         <img src="<?= base_url('assets/images/gambar/'. $value->image_instr)?>">
                                    </td>
                                    <td class="primary">
                                         <a href="<?= base_url('crud_instruktur/update/'.$value->id_instruktur)?>"><i class="uil uil-pen"></i></a>
-                                        <a href="<?= base_url('crud_instruktur/delete/'.$value->id_instruktur)?>"><i class="uil uil-trash"></i></a>
+                                        <a href="<?= base_url('crud_instruktur/delete/'.$value->id_instruktur)?>" onclick="return confirm('Yakin hapus data <?= $value->username_instr?> ?');"><i class="uil uil-trash"></i></a>
                                    </td>
                               </tr>
                          <?php }?>                         

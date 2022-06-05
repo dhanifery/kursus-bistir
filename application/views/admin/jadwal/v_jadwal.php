@@ -32,7 +32,7 @@
                                                         <th>Instruktur</th>
                                                         <th>Paket</th>
                                                         <th>Actions</th>
-                                                        <th></th>
+                                                        <th>Options</th>
                                                 </tr>
                                                 </thead>
                                                 <tbody>
@@ -59,9 +59,9 @@
                                                                                 <td>
                                                                                         <a href="<?= base_url('jadwal_admin/cek_bukti/'.$value->id_jadwal)?>" class="btn btn-jadwal" ><p>cek bukti</p></a>
                                                                                 </td>      
-                                                                        <?php } else {?>
+                                                                        <?php } elseif ($value->status_jadwal == 2 & $value->status_bayar == 1) {?>
                                                                                 <td>
-                                                                                        -
+                                                                                <a href="<?= base_url('jadwal_admin/qr_code/'.$value->id_jadwal)?>" class="btn btn-jadwal jadwal-danger" ><p>QR-Code</p></a>
                                                                                 </td>
                                                                 <?php }?>
                                                                 <?php
@@ -75,7 +75,7 @@
                                                                                 </td> 
                                                                         <?php } elseif($value->status_jadwal == 2 & $value->status_bayar == 1) {?>
                                                                                 <td>
-                                                                                        <button class="btn btn-jadwal jadwal-danger">QR Code</button>        
+                                                                                              -  
                                                                                 </td>
                                                                         <?php }else {?>
                                                                                 <td>
@@ -99,6 +99,7 @@
                                                         <th>Instruktur</th>
                                                         <th>Paket</th>
                                                         <th>Actions</th>
+                                                        <th>Options</th>
                                                 </tr>
                                                 </thead>
                                                 <tbody>
@@ -120,6 +121,7 @@
                                                                                         -
                                                                                 </td>
                                                                         <?php }?>
+                                                        <td>-</td>
                                                 </tr>
                                                 <?php }?>                         
                                                 </tbody>
@@ -146,7 +148,7 @@
                                                         <th>Instruktur</th>
                                                         <th>Paket</th>
                                                         <th>Actions</th>
-                                                        <th></th>
+                                                        <th>Options</th>
                                                 </tr>
                                                 </thead>
                                                 <tbody>
@@ -198,7 +200,8 @@
                                                         <th>Peserta</th>
                                                         <th>Instruktur</th>
                                                         <th>Paket</th>
-                                                        <th>#</th>
+                                                        <th>Actions</th>
+                                                        <th>Options</th>
                                                 </tr>
                                                 </thead>
                                                 <tbody>
@@ -220,6 +223,7 @@
                                                                                         <p class="btn btn-jadwal">Menunggu Instruktur</p>        
                                                                                 </td>
                                                                         <?php }?>
+                                                        <td>-</td>
                                                 </tr>
                                                 <?php }?>                         
                                                 </tbody>
@@ -237,6 +241,7 @@
                                                         <th>Instruktur</th>
                                                         <th>Paket</th>
                                                         <th>QR Code</th>
+                                                        <th>Options</th>
                                                 </tr>
                                                 </thead>
                                                 <tbody>
@@ -257,9 +262,10 @@
                                                                 <?php
                                                                         if ($value->status_jadwal == 2) {?>
                                                                                 <td>
-                                                                                        <p class="btn btn-jadwal jadwal-danger">QR Code</p>        
+                                                                                <a href="<?= base_url('jadwal_admin/qr_code/'.$value->id_jadwal)?>" class="btn btn-jadwal jadwal-danger" ><p>QR-Code</p></a>        
                                                                                 </td>
                                                                         <?php }?>
+                                                        <td>-</td>
                                                 </tr>
                                                 <?php }?>                         
                                                 </tbody>
@@ -269,4 +275,4 @@
                 </div>
 </div>
 </div>
-               
+            

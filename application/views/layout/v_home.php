@@ -11,7 +11,7 @@
 
         <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
         <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
-        <link rel="stylesheet" href="<?= base_url()?>/assets/css/home.css">
+        <link rel="stylesheet" href="<?= base_url()?>/assets/css/home-utama.css">
 </head>
 <body>
         <div class="overlay"></div>
@@ -78,7 +78,7 @@
                                         </p>
                                         <div class="cta">
                                                 <a href="<?= base_url('auth/login_user')?>" class="btn">Courses Now</a>
-                                                <a href="" download class="btn secondary-btn">Pelajari Selengkapnya</a>
+                                                <a href="#"  class="btn secondary-btn">Pelajari Selengkapnya</a>
                                         </div>
                                 </div>
                                 <div class="showcase-image">
@@ -492,12 +492,10 @@
                         <img src="<?= base_url()?>/assets/images/home/triangle.png" class="shape triangle">
                         <div class="container">
                                 <div class="services-info">
-                                        <h3 class="sub-heading">About us</h3>
-                                        <h1 class="heading">Thing we may do for my clients</h1>
+                                        <h3 class="sub-heading">About B I S T I R</h3>
+                                        <h1 class="heading">Thing we may do for our clients</h1>
                                         <p class="text">
-                                                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Earum, 
-                                                molestias recusandae? Minima nisi officia quisquam qui culpa aliquam 
-                                                earum similique corrupti, aliquid quo placeat voluptas fugit ut, iste dolore commodi?
+                                                Ayoo bergabung bersama kami di BISTIR (Bisa Nyetir) pendaftaran secara online kapanpun dan dimanapun
                                         </p>
                                         <div class="milestones">
                                                 <div class="ml">
@@ -510,8 +508,8 @@
                                                 </div>
                                         </div>
                                         <div class="cta">
-                                                <a href="" class="btn">Hire me</a>
-                                                <a href="<?= base_url()?>/assets/images/home/markusCV.pdf" download class="btn secondary-btn">Download CV</a>
+                                                <a href="<?= base_url('auth/login_user')?>" class="btn">Courses Now</a>
+                                                <a href="<?= base_url()?>/assets/images/home/markusCV.pdf" download class="btn secondary-btn">Pelajari Selengkapnya</a>
                                         </div>
                                 </div>
                                 <div class="services-grid">
@@ -519,9 +517,7 @@
                                                 <div class="card-desc">
                                                         <h3>Paket</h3>
                                                         <p class="text">
-                                                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
-                                                                Illo, veritatis deleniti suscipit nemo, est autem error 
-                                                                necessitatibus eveniet illum facere architecto distinctio,
+                                                                Peserta bisa memilih paket jadwal sesuai keinginan
                                                         </p>
                                                 </div>
                                                 <a href="<?= base_url('home')?>#portfolio" class="btn secondary-btn">Explore More</a>
@@ -530,8 +526,7 @@
                                                 <div class="card-desc">
                                                         <h3>Mobil</h3>
                                                         <p class="text">
-                                                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
-                                                                Illo, veritatis deleniti suscipit nemo, est autem error 
+                                                                Tersedia berbagai jenis mobil untuk pelatihan peserta
                                                         </p>
                                                 </div>
                                                 <a href="<?= base_url('home')?>#portfolio" class="btn secondary-btn">Explore More</a>
@@ -540,22 +535,21 @@
                                                 <div class="card-desc">
                                                         <h3>Instruktur</h3>
                                                         <p class="text">
-                                                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
-                                                                Illo, veritatis deleniti 
+                                                               Peserta akan dibimbing oleh Instruktur terlatih dan ahli yang terverifikasi
                                                         </p>
                                                 </div>
                                                 <a href="<?= base_url('home')?>#testi" class="btn secondary-btn">Explore More</a>
                                         </div>
                                         <div class="srv-card">
                                                 <div class="card-desc">
-                                                        <h3>App Design</h3>
+                                                        <h3>Kantor B I S T I R</h3>
                                                         <p class="text">
-                                                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
-                                                                Illo, veritatis deleniti suscipit nemo, est autem error 
+                                                                Peserta juga bisa datang langsung ke kantor kami di 
+                                                                Jln.Cut Mutia Bekasi 
 
                                                         </p>
                                                 </div>
-                                                <a href="#" class="btn secondary-btn">Explore More</a>
+                                                <a href="<?= base_url('home/kantor')?>" class="btn secondary-btn">Explore More</a>
                                         </div>
                                         <img src="<?= base_url()?>/assets/images/home/square1.png" alt="" class="shape square">
                                 </div>
@@ -686,7 +680,7 @@
                                 </div>
                                 <div class="testimonials-title">
                                         <h3 class="sub-heading"><?= $title_instr?></h3>
-                                        <h1 class="heading">This is our Instruktur</h1>
+                                        <h1 class="heading">This is our <br>Instruktur</h1>
                                 </div>
                         </div>
                 </section>
@@ -696,24 +690,22 @@
                         <div class="container">
                         <img src="<?= base_url()?>/assets/images/home/square2.png" class="shape square">
                                 <div class="contact-info">
-                                        <h3 class="sub-heading">COntact me</h3>
-                                        <h1 class="heading">Let's work together</h1>
+                                        <h3 class="sub-heading">Contact Us</h3>
+                                        <h1 class="heading">Let's Join with Us</h1>
                                         <p class="text">
-                                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                                 Fugit harum suscipit odio ad commodi ipsam reiciendis 
-                                                 repudiandae fuga autem minima error esse dolores omnis
-                                                 iure, nisi, ab sint ratione reprehenderit!
+                                                Ayoo bergabung bersama kami di BISTIR (Bisa Nyetir) pendaftaran secara online kapanpun dan dimanapun serta
+                                                calon peserta dapat bertanya seputar website BISTIR dengan mengisi form Contact Us disamping...
                                         </p>
-                                        <a href="#" class="mail">markusraik@mail.com 
+                                        <a href="#" class="mail">bistir@gmail.com 
                                                 <i class="uil uil-arrow-right"></i>
                                         </a>
                                 </div>
 
                                 <form action="index.html" class="contact-form">
-                                        <h3>Send me a message</h3>
+                                        <h3>Send a message</h3>
                                         <input type="text" class="form-input" placeholder="Your Name" required>
                                         <input type="email" class="form-input" placeholder="Your Email" required>
-                                        <textarea placeholder="Project Details" class="form-input" required></textarea>
+                                        <textarea placeholder="Message" class="form-input" required></textarea>
                                         <input type="submit" value="send" class="btn">
                                 </form>
                         </div>
@@ -743,26 +735,26 @@
                 </section>
         </main>
 
-        <footer> 
+        <footer>
                 <div class="container">
                         <div class="footer-logo">
                                 <img class="logo-img" src="<?= base_url()?>assets/images/logo.png">
                                 <a href="" class="logo">BI<span class="danger">-STIR</span></a>
                         </div>
                         <p class="text">&copy; Copyright 2022. All rights reserved</p>
-                        <ul class="social-media">
+                        <ul>
                                 <li>
-                                        <a href="#" class="social-link">
+                                        <a href="" class="media">
                                                 <i class="uil uil-facebook-f"></i>
                                         </a>
                                 </li>
                                 <li>
-                                        <a href="#" class="social-link">
+                                        <a href="" class="media">
                                                 <i class="uil uil-twitter"></i>
                                         </a>
                                 </li>
                                 <li>
-                                        <a href="#" class="social-link">
+                                        <a href="" class="media">
                                                 <i class="uil uil-dribbble"></i>
                                         </a>
                                 </li>
@@ -777,7 +769,7 @@
 <script src="https://unpkg.com/scrollreveal"></script>
 <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
 <script src="<?= base_url()?>/assets/js/mixitup.min.js"></script>
-<script src="<?= base_url()?>/assets/js/home_js.js"></script>
+<script src="<?= base_url()?>/assets/js/home_index.js"></script>
 
 </body>
 </html>

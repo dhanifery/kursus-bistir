@@ -7,7 +7,7 @@
                                         <p class="text">Selamat datang di B I S T I R. Mulai kursus anda sekarang ?
                                         </p>
                                         <div class="cta">
-                                                <a href="" class="btn">Courses now</a>
+                                                <a href="<?= base_url('jadwal/jadwal_peserta')?>" class="btn">Courses now</a>
                                                 <a href="" download class="btn secondary-btn">Pelajari selengkapnya</a>
                                         </div>
                                 </div>

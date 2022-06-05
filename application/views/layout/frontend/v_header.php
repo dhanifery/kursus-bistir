@@ -9,41 +9,82 @@
                                 <?php
                                         if ($this->session->userdata('level_user') == "2") {?>
                                         <li>
-                                                <a href="<?= base_url('peserta')?>" class="nav-link">Home</a>
+                                                <a href="<?= base_url('peserta')?>" class="nav-link <?php if($this->uri->segment(1)== 'peserta'){
+                                                echo "link-active";
+                                                }?>">Home</a>
                                         </li>
                                         <!-- <li>
                                                 <a href="<?= base_url('peserta/about')?>" class="nav-link">About</a>
                                         </li> -->
                                         <li>
-                                                <a href="<?= base_url('courses/paket')?>" class="nav-link">courses</a>
+                                                <a href="<?= base_url('courses/paket')?>" class="nav-link 
+                                                <?php if($this->uri->segment(2)== 'paket'){
+                                                echo "link-active";
+                                                }elseif($this->uri->segment(2)=='rinci_paket'){
+                                                        echo "link-active";
+                                                }elseif($this->uri->segment(2)=='rinci_mobil'){
+                                                        echo "link-active";
+                                                }?>">courses</a>
                                         </li>
                                         <li>
-                                                <a href="<?= base_url('daftar_kursus/daftar_peserta')?>" class="nav-link">Daftar</a>
+                                                <a href="<?= base_url('daftar_kursus/daftar_peserta')?>" class="nav-link <?php if($this->uri->segment(2)== 'daftar_peserta'){
+                                                echo "link-active";
+                                                }elseif($this->uri->segment(2)=='daftar_jadwal_peserta'){
+                                                        echo "link-active";
+                                                }?>">Daftar</a>
                                         </li>
                                         <li>
-                                                <a href="<?= base_url('jadwal/jadwal_peserta')?>" class="nav-link">Jadwal</a>
+                                                <a href="<?= base_url('jadwal/jadwal_peserta')?>" class="nav-link 
+                                                <?php if($this->uri->segment(2)=='jadwal_peserta'){
+                                                echo "link-active";
+                                                }elseif($this->uri->segment(2)=='detail_jadwal_peserta'){
+                                                        echo "link-active";
+                                                }elseif($this->uri->segment(2)=='bayar'){
+                                                        echo "link-active";
+                                                }?>">Jadwal</a>
                                         </li>
                                         <!-- <li>
                                                 <a href="<?= base_url('peserta/contact')?>" class="nav-link">Contact</a>
                                         </li> -->
                                         <?php } else {?>
                                                 <li>
-                                                <a href="<?= base_url('instruktur')?>" class="nav-link">Home</a>
+                                                <a href="<?= base_url('instruktur')?>" class="nav-link <?php if($this->uri->segment(1)== 'instruktur'){
+                                                echo "link-active";
+                                                }?>">Home</a>
                                         </li>
                                         <!-- <li>
                                                 <a href="<?= base_url('instruktur/about')?>" class="nav-link">About</a>
                                         </li> -->
                                         <li>
-                                                <a href="<?= base_url('courses/paket')?>" class="nav-link">courses</a>
+                                                <a href="<?= base_url('courses/paket')?>" class="nav-link 
+                                                <?php if($this->uri->segment(2)== 'paket'){
+                                                echo "link-active";
+                                                }elseif($this->uri->segment(2)=='rinci_paket'){
+                                                        echo "link-active";
+                                                }elseif($this->uri->segment(2)=='rinci_mobil'){
+                                                        echo "link-active";
+                                                }?>">courses</a>
                                         </li>
                                         <li>
-                                                <a href="<?= base_url('daftar_kursus/daftar_instruktur')?>" class="nav-link">Daftar</a>
+                                                <a href="<?= base_url('daftar_kursus/daftar_instruktur')?>" class="nav-link <?php if($this->uri->segment(2)== 'daftar_instruktur'){
+                                                echo "link-active";
+                                                }elseif($this->uri->segment(2)=='update_instruktur'){
+                                                        echo "link-active";
+                                                }?>">Daftar</a>
                                         </li>
                                         <li>
-                                                <a href="<?= base_url('jadwal/jadwal_instruktur')?>" class="nav-link">Jadwal</a>
+                                                <a href="<?= base_url('jadwal/jadwal_instruktur')?>" class="nav-link <?php if($this->uri->segment(2)== 'jadwal_instruktur'){
+                                                echo "link-active";
+                                                }elseif($this->uri->segment(2)=='konfirmasi'){
+                                                        echo "link-active";
+                                                }?>">Jadwal</a>
                                         </li>
                                         <li>
-                                                <a href="<?= base_url('jadwal/jadwal_instruktur_aktif')?>" class="nav-link">My Jadwal</a>
+                                                <a href="<?= base_url('jadwal/jadwal_instruktur_aktif')?>" class="nav-link <?php if($this->uri->segment(2)== 'jadwal_instruktur_aktif'){
+                                                echo "link-active";
+                                                }elseif($this->uri->segment(2)=='detail_jadwal'){
+                                                        echo "link-active";
+                                                }?>">My Jadwal</a>
                                         </li>
                                         <!-- <li>
                                                 <a href="<?= base_url('peserta/contact')?>" class="nav-link">Contact</a>
@@ -70,8 +111,15 @@
                                                 </div>
                                                 <div class="profile_down">
                                                         <ul class="profile_ul">
-                                                          <li class="profile_li"><a class="profile" href="#"><i class="uil uil-user"></i> Profile</a>
+                                                        <?php
+                                                        if ($this->session->userdata('level_user') == "2") {?>
+                                                                <li class="profile_li"><a class="profile" href="<?= base_url('peserta/my_profil')?>"><i class="uil uil-user"></i> Profile</a>
                                                           </li>
+                                                        <?php } else {?>
+                                                                <li class="profile_li"><a class="profile" href="<?= base_url('instruktur/my_profil')?>"><i class="uil uil-user"></i> Profile</a>
+                                                          </li>
+                                                        <?php } ?>
+
                                                           <li class="profile_li"><a class="profile" href="<?= base_url('auth/logout_user')?>"><i class="uil uil-signout"></i> Sign out </a></li>
                                                         </ul>
                                                       </div>

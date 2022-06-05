@@ -11,7 +11,7 @@
 
         <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
         <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
-        <link rel="stylesheet" href="<?= base_url()?>/assets/css/home.css">
+        <link rel="stylesheet" href="<?= base_url()?>/assets/css/home-utama.css">
 </head>
 <body>
         <div class="overlay"></div>
@@ -721,7 +721,6 @@
                         </div>
                 </section>
         </main>
-
         <footer>
                 <div class="container">
                         <div class="footer-logo">
@@ -729,19 +728,19 @@
                                 <a href="" class="logo">BI<span class="danger">-STIR</span></a>
                         </div>
                         <p class="text">&copy; Copyright 2022. All rights reserved</p>
-                        <ul class="social-media">
+                        <ul>
                                 <li>
-                                        <a href="#" class="social-link">
+                                        <a href="" class="media">
                                                 <i class="uil uil-facebook-f"></i>
                                         </a>
                                 </li>
                                 <li>
-                                        <a href="#" class="social-link">
+                                        <a href="" class="media">
                                                 <i class="uil uil-twitter"></i>
                                         </a>
                                 </li>
                                 <li>
-                                        <a href="#" class="social-link">
+                                        <a href="" class="media">
                                                 <i class="uil uil-dribbble"></i>
                                         </a>
                                 </li>
@@ -756,7 +755,7 @@
 <script src="https://unpkg.com/scrollreveal"></script>
 <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
 <script src="<?= base_url()?>/assets/js/mixitup.min.js"></script>
-<script src="<?= base_url()?>/assets/js/home_js.js"></script>
+<script src="<?= base_url()?>/assets/js/home_index.js"></script>
 
 </body>
 </html>

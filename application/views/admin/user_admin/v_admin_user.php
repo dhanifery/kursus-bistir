@@ -19,6 +19,7 @@
                         <th>Username</th>
                         <th>Email</th>
                         <th>Level</th>
+                        <th>Is Active</th>
                         <th>Image</th>
                         <th>action</th>
                 </tr>
@@ -29,10 +30,18 @@
                 foreach ($user as $key => $value) {?>        
                 <tr>
                         <td><?= $no++?></td>
-                        <td><?= $value->nama_user;?></td>
+                        <td style="font-weight: bold;"><?= $value->nama_user;?></td>
                         <td><?= $value->email;?></td>
                         <td><?php if($value->level_user = 1){?>
                                 Admin
+                        <?php }?>
+                        </td>
+                        <td>
+                        <?php
+                               if ($value->is_active == 1) {?>
+                                       <p class="primary">Active</p>
+                        <?php }else{?>
+                                <p class="danger">Non Active</p>
                         <?php }?>
                         </td>
                         <td style="width:70px ;">
@@ -40,7 +49,7 @@
                         </td>
                         <td class="primary">
                         <a href="<?= base_url('user/update/'.$value->id_user)?>"><i class="uil uil-pen"></i></a>
-                        <a href="<?= base_url('user/delete/'.$value->id_user)?>"><i class="uil uil-trash"></i></a>
+                        <a href="<?= base_url('user/delete/'.$value->id_user)?>" onclick="return confirm('Yakin hapus data <?= $value->nama_user?>?')"><i class="uil uil-trash"></i></a>
                         </td>
                 </tr>
                 <?php }?>                         

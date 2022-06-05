@@ -20,6 +20,7 @@
                                    <th>Jenis mobil</th>
                                    <th>No plat</th>
                                    <th>No mesin</th>
+                                   <th>Image</th>
                                    <th>actions</th>
                               </tr>
                          </thead>
@@ -37,12 +38,13 @@
                                                 <td class="primary">Matic</td>    
                                         <?php }?>
                                    <td><?= $value->no_plat?></td>
+                                   <td><?= $value->no_mesin?></td>
                                    <td style="width:70px ;">
                                         <img src="<?= base_url('assets/images/mobil/'. $value->image_mobil)?>">
                                    </td>
                                    <td class="primary">
                                         <a href="<?= base_url('mobil/update/'.$value->id_mobil)?>"><i class="uil uil-pen"></i></a>
-                                        <a href="<?= base_url('mobil/delete/'.$value->id_mobil)?>"><i class="uil uil-trash"></i></a>
+                                        <a href="<?= base_url('mobil/delete/'.$value->id_mobil)?>" onclick="return confirm('Yakin hapus data <?= $value->nama_mobil?> ?')"><i class="uil uil-trash"></i></a>
                                    </td>
                               </tr>                         
                          </tbody>

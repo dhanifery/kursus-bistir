@@ -79,7 +79,7 @@ class Crud_instruktur extends CI_Controller {
                                  'TTL' => $this->input->post('TTL'),
                                  'no_telp' => $this->input->post('no_telp'),
                                  'deskripsi_instr' => $this->input->post('deskripsi_instr'),
-                                 'honor' => 50000,
+                                 'honor' => 'Rp.'.number_format(50000,0),
                                  'JK' => $this->input->post('JK'),
                                  'image_instr' => $upload_data['uploads']['file_name'],
                          );

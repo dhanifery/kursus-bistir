@@ -55,6 +55,7 @@
                                                         <th>Paket</th>
                                                         <th>Status </th>
                                                         <th>Option</th>
+                                                        <th>Actions</th>
                                                 </tr>
                                                 </thead>
                                                 <tbody>
@@ -87,6 +88,7 @@
                                                                 <?php }?>
                                                                 </td>
                                                         <?php }?>
+                                                        <td> - </td>
                                                         <?php 
                                                         
                                                                 if ($value->status_jadwal == 1 & $value->status_bayar == 1) {?>

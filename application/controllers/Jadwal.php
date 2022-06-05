@@ -112,6 +112,7 @@ class Jadwal extends CI_Controller {
         {
                 $data = array(
 			'title' => 'B I S T I R | My Jadwal ',
+			'sub_title' => 'Daftar Jadwal',
 			'user' => $this->m_user->cek_data(['email' => $this->session->userdata('email')])->row_array(),
                         'user_peserta'=>$this->m_peserta->get_all_data(),
                         'paket'=>$this->m_paket->get_all_data(),
@@ -183,6 +184,8 @@ class Jadwal extends CI_Controller {
 		);
 		$this->load->view('layout/frontend/v_wrapper_frontend', $data ,FALSE);
 	}
+
+
 
 }
 

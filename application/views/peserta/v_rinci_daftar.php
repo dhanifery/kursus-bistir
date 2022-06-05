@@ -65,21 +65,33 @@
                                                         <h3>Form pendaftaran</h3>
                                                         <?php 
                                                         foreach ($daftar_peserta as $key => $value) {?>
+                                                        <label for="">Nama Peserta*</label>
                                                         <input type="text" class="form-input" name="username" value="<?= $value->username_peserta?>"placeholder="Username" readonly>
-                                                        <div class="form2">
-                                                                <input type="email" class="form-input" name="email" value="<?= $value->email_peserta?>" placeholder="Email" readonly>
-                                                                <div hidden class="hidden">
-                                                                        <input type="date" class="form-date">
+                                                                <div class="form2">
+                                                                        <div class="form-2">
+                                                                                <label for="">Email*</label>
+                                                                                <input type="email" class="form-input input-primary" name="email" value="<?= $value->email_peserta?>" placeholder="Email" readonly>
+                                                                        </div>
+                                                                        <div class="form-2">
+                                                                                <label for="">Tanggal Lahir*</label>
+                                                                                <input type="text" name="TTL" class="form-input" value="<?= $value->TTL?>" name="TTL" placeholder="Tanggal lahir" readonly>
+                                                                        </div>
+
+                                                                        
                                                                 </div>
-                                                                        <input type="text" name="TTL" class="form-date" value="<?= $value->TTL?>" name="TTL" onfocus="(this.type='date')" 
-                                                                        onblur="if(this.value) this.type='text'" placeholder="Tanggal lahir" readonly>
-                                                        </div>
-                                                        <div class="form2">
-                                                                <input type="text" class="form-input" name="no_telp" value="<?= $value->no_telp?>" placeholder="No telp" readonly>
-                                                                <select name="JK">
-                                                                        <option value=""><?= $value->JK?></option>
-                                                                </select>
-                                                        </div>
+                                                                <div class="form2">
+                                                                        <div class="form-2" style="width: 100%;">
+                                                                        <label for="">No Telp*</label>
+                                                                                <input type="text" class="form-input" name="no_telp" value="<?= $value->no_telp?>" placeholder="No telp" readonly>
+                                                                        </div>
+                                                                        <div class="form-2">
+                                                                                <label for="">Jenis Kelamin*</label>
+                                                                                <input type="text" class="form-input" name="no_telp" value="<?= $value->JK?>" placeholder="No telp" readonly>
+                                                                        </div>
+
+                                                                </div>
+                                                        
+                                                        <label for="">Alamat Peserta*</label>
                                                         <textarea placeholder="Alamat" class="form-input" name="alamat" readonly><?= $value->alamat?></textarea>
                                                         <?php }?>
                                                 </div>

@@ -31,7 +31,7 @@
 
 
 <script src="<?= base_url()?>/assets/js/mixitup.min.js"></script> 
-<script src="<?= base_url()?>/assets/js/home_js.js"></script>
+<script src="<?= base_url()?>/assets/js/home.js"></script>
 
 <script>
                $(document).ready( function () {

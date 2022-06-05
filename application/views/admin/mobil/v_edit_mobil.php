@@ -31,12 +31,16 @@
 
                          
                          echo form_open_multipart('mobil/update/'.$mobil->id_mobil) ?>
-                              <h3>Form Add Mobil</h3>
+                              <h3>Form Edit Mobil</h3>
                               <input type="hidden" class="form-input" name="id_mobil"  value="<?= $mobil->id_mobil?>"autocomplete="off" placeholder="Nama Mobil" required>
+                              <label for="">Nama Mobil*</label>
                               <input type="text" class="form-input" name="nama_mobil"  value="<?= $mobil->nama_mobil?>"autocomplete="off" placeholder="Nama Mobil" required>
+                              <label for="">No Mesin*</label>
                               <input type="text" class="form-input" name="no_mesin"  value="<?= $mobil->no_mesin?>"autocomplete="off" placeholder="No Mesin" >
                               <div class="form2">
-                                   <select class="form-input" name="jenis_mobil" id="">
+                                <div class="form-2">
+                                        <label for="">Transmisi*</label>
+                                        <select class="form-input" name="jenis_mobil" id="">
                                            <option value="<?= $mobil->jenis_mobil?>"><?php 
                                              if ($mobil->jenis_mobil == 1){?>
                                                   Manual
@@ -46,9 +50,24 @@
                                            <option value="1">Manual</option>
                                            <option value="2">Matic</option>
                                    </select>
-                                   <input type="text" name="no_plat" class="form-input" value="<?= $mobil->no_plat?>" autocomplete="off" placeholder="No Plat">
+                                </div>
+                                <div class="form-2">
+                                        <label for="">No Plat*</label>
+                                        <input type="text" name="no_plat" class="form-input" value="<?= $mobil->no_plat?>" autocomplete="off" placeholder="No Plat">
+                                </div>
+                                  
                               </div>
-                              <input type="file" name="image_mobil" class="form-input form-file" id="preview_gambar" autocomplete="off">
+                              
+                              <label for="">Ganti foto*</label>
+                              <input type="file" name="image_mobil" class="file-form" id="preview_gambar">
+                              <label for="preview_gambar" class="file-form">
+                                   <span>
+                                        <i class="uil uil-image-plus"></i>
+                                        <p>Image</p>
+                                   </span>
+                                   Upload foto
+                              </label>
+                              <label for="">Deskripsi*</label>
                               <textarea placeholder="Deskripsi" name="deskripsi_mobil" class="form-input"></textarea>
                               <input type="submit" value="Save" class="btn">
                               <!-- <a href=""><span class="material-icons-sharp">send</span></a> -->

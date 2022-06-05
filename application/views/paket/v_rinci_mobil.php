@@ -20,7 +20,7 @@
 
                                         </div>
                                         <div class="cta">
-                                                <a href="<?= base_url('auth/login_user')?>" class="btn">Courses now</a>
+                                                <a href="<?= base_url('jadwal/jadwal_peserta')?>" class="btn">Courses now</a>
                                                 <!-- <a href="<?= base_url()?>/assets/images/home/markusCV.pdf" download class="btn secondary-btn">Download CV</a> -->
                                         </div>
                                 </div>

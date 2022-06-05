@@ -32,23 +32,29 @@
                          }
                          
                          echo form_open_multipart('user/update/'.$user->id_user) ?>
-                              <h3>Form Daftar</h3>
+                              <h3>Form Edit</h3>
+                              <label for="">Username*</label>
                               <input type="text" class="form-input"  name="nama_user" value="<?= $user->nama_user?>" autocomplete="off" placeholder="Username" required>
-                              <input type="file" class="form-input form-file" name="image" id="preview_gambar">
+                              
                               <div class="form2">
-                                   <select name="is_active">
-                                        <option value="<?=$user->is_active?>">
-                                        <?php 
-                                             if ($user->is_active == 1){?>
-                                                  Active
-                                        <?php }else{?>
-                                             Non Active
-                                        <?php }?>
-                                        </option>
-                                        <option value="1"> Active</option>
-                                        <option value="2">Non Active</option>
+                                   <div class="form-2">
+                                        <label for="">Is Active*</label>
+                                        <select name="is_active">
+                                             <option value="<?=$user->is_active?>">
+                                             <?php 
+                                                  if ($user->is_active == 1){?>
+                                                       Active
+                                             <?php }else{?>
+                                                  Non Active
+                                             <?php }?>
+                                             </option>
+                                             <option value="1"> Active</option>
+                                             <option value="2">Non Active</option>
                                    </select>
-                                   <select name="level_user">
+                                   </div>
+                                   <div class="form-2">
+                                        <label for="">Level User*</label>
+                                        <select name="level_user">
                                         <option value="<?=$user->level_user?>">
                                         <?php 
                                              if ($user->level_user == 1){?>
@@ -58,8 +64,19 @@
                                         <option value="1">Admin</option>
                                         <option value="2">Peserta</option>
                                         <option value="3">Instruktur</option>
-                                   </select>                       
+                                   </select> 
+                                   </div>
+                                                         
                               </div>
+                              <label for="">Ganti foto*</label>
+                              <input type="file" name="image" class="file-form" id="preview_gambar">
+                              <label for="preview_gambar" class="file-form">
+                                   <span>
+                                        <i class="uil uil-image-plus"></i>
+                                        <p>Image</p>
+                                   </span>
+                                   Upload foto
+                              </label>
                               <div class="form3">
                                    <input type="submit" value="Save" class="btn">
                                    <a  class="btn btn-password btn-sm" href="<?= base_url('user')?>">

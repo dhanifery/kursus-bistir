@@ -52,9 +52,8 @@
                 <h5><i class="icon fas fa-exclamation-triangle"></i> Info!</h5>','
                 </div>');
 
-                ?>        
-                        <div class="portfolio-gallery">                
-                                <div class="form-daftar">
+                ?>                        
+                                <div class="form-daftar daftar-bayar">
                                         <h3>Upload bukti pembayaran</h3>
                                         <input type="text" class="form-input" name="no_rek" value="<?= set_value('no_rek')?>" placeholder="No.Rek" required>
 
@@ -67,16 +66,42 @@
                                                 foreach ($paket as $key => $value) {?>
                                                         <?php
                                                                 if ($value->id_paket == $jadwal->id_paket) {?>
-                                                                        <option value="<?= $value->harga?>">Rp.<?= number_format($value->harga,0)?></option>
+                                                                        <option value="<?= $value->harga?>">Jumlah Transfer : Rp.<?= number_format($value->harga,0)?></option>
                                                         <?php }?>
                                         <?php }?>
                                         </select>
-                                        <input type="file" class="form-input file-form" name="bukti_bayar" value="" placeholder="No.Rek" required>
+                                        <img src="<?= base_url('assets/images/no-image-1.png')?>" alt="" id="gambar_load">
+                                        <input type="file" class="file-form" name="bukti_bayar" value=""  id="preview_gambar" required>
+                                        <label for="preview_gambar" class="file-form">
+                                                <span>
+                                                        <i class="uil uil-image-plus"></i>
+                                                        <p>Image</p>
+                                                </span>
+        
+                                                Upload foto...
+                                        </label>
 
                                         <input type="submit" value="submit" class="btn">
                                 </div>
-                        </div>
                 </div>                                          
                 <?php echo form_close()?>
                 </div>
         </section>
+
+<script text="javascript">
+function bacaGambar(input){
+        if (input.files && input.files[0]) {
+                        var reader = new FileReader();
+                        reader.onload = function(e){
+                        $('#gambar_load').attr('src', e.target.result);
+                }
+                reader.readAsDataURL(input.files[0]);
+        }
+
+}
+
+
+$("#preview_gambar").change(function(){
+        bacaGambar(this);
+});
+</script>

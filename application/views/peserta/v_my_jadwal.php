@@ -70,6 +70,7 @@
                                                         <th>Instruktur</th>
                                                         <th>Paket</th>
                                                         <th>Status </th>
+                                                        <th>QR Code </th>
                                                         <th>Option</th>
                                                 </tr>
                                                 </thead>
@@ -101,7 +102,8 @@
                                                                 <?php }?>
                                                                 </td>
                                                         <?php }?>
-
+                                                        
+                                                        <td> - </td>
                                                         <?php
                                                              if ($value->status_jadwal == 0 & $value->status_bayar == 0) {?>
                                                                         <td>

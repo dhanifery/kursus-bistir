@@ -98,7 +98,11 @@ class Crud_peserta extends CI_Controller {
 
         //Update one item
         public function update($id_peserta = NULL)
-        {       
+        
+        {        $this->form_validation->set_rules('username_peserta', 'Username', 'required|min_length[3]',
+                array('required'=>'%s Harus Diisi !!!!',
+                'min_length'=> '%s Minimal 3 karakter !'
+        ));
                 $this->form_validation->set_rules('TTL', 'Tanggal Lahir', 'required',
                 array('required'=>'%s Harus Diisi !!!!'
         ));

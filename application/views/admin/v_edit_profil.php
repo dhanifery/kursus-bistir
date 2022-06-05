@@ -33,17 +33,34 @@
                          
                          echo form_open_multipart('admin/edit_profil/'.$user->id_user) ?>
                               <h3>Form Profil</h3>
+                              <label for="">Username*</label>
                               <input type="text" class="form-input"  name="nama_user" value="<?= $user->nama_user?>" autocomplete="off" placeholder="Username" required>
                               <div class="form2">
-                                <input type="password" class="form-input"  name="password" value="<?= $user->password?>" autocomplete="off" placeholder="Username" readonly>
-                                <p class="form-input">
-                                <?php
-                                if ($user->level_user == 1) {?>
-                                        Admin
-                                <?php }?>
-                                </p>
+                              <div class="form-2">
+                                   <label for="">Password</label>
+                                   <input type="password" class="form-input"  name="password" value="<?= $user->password?>" autocomplete="off" placeholder="Password" readonly>
                               </div>
-                              <input type="file" class="form-input form-file" name="image" id="preview_gambar">
+                              <div class="form-2">
+                                        <label for="">Level User*</label>
+                                        <select name="" id="">
+                                             <option value="">
+                                                  <?php
+                                                  if ($user->level_user == 1) {?>
+                                                            Admin
+                                                  <?php }?>
+                                             </option>
+                                        </select>
+                                   </div>
+                              </div>
+                              <label for="">Ganti foto*</label>
+                              <input type="file" name="image" class="file-form" id="preview_gambar">
+                              <label for="preview_gambar" class="file-form">
+                                   <span>
+                                        <i class="uil uil-image-plus"></i>
+                                        <p>Image</p>
+                                   </span>
+                                   Upload foto
+                              </label>
                               <div class="form3">
                                    <input type="submit" value="Save" class="btn">
                                    <a  class="btn btn-password" href="<?= base_url('admin/ganti_password/' .$user->id_user)?>">

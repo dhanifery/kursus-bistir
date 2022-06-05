@@ -85,49 +85,78 @@
      <h2>Sales Analytics</h2>
      <div class="item online">
           <div class="icon">
-               <span class="material-icons-sharp">shopping_cart</span>
+               <span class="material-icons-sharp">person</span>
           </div>
           <div class="right">
                <div class="info">
-                    <h3>ONLINE ORDERS</h3>
+                    <h3>DAFTAR ONLINE </h3>
                     <small class="text-muted">Last 24 Hours</small>
                </div>
-               <h5 class="success">+39%</h5>
-               <h3>1100</h3>
+               <?php
+               $daftar_online = $this->m_home->total_daftar_online();
+               $daftar_offline = $this->m_home->total_daftar_offline();
+               $user = $this->m_home->total_user();
+               $kantor = $this->m_home->get_kantor();
+               $user_online = $this->m_home->user_online();
+               $user_offline = $this->m_home->user_offline();
+               ?>
+               <h3><?= $daftar_online?>+</h3>
           </div>
      </div>
      <div class="item offline">
-          <div class="icon">
-               <span class="material-icons-sharp">local_mall</span>
-          </div>
-          <div class="right">
-               <div class="info">
-                    <h3>OFFLINE ORDERS</h3>
-                    <small class="text-muted">Last 24 Hours</small>
-               </div>
-               <h5 class="danger">-17%</h5>
-               <h3>1100</h3>
-          </div>
-     </div>
-     <div class="item costumers">
           <div class="icon">
                <span class="material-icons-sharp">person</span>
           </div>
           <div class="right">
                <div class="info">
-                    <h3>NEW COSTUMER</h3>
+                    <h3>DAFTAR OFFLINE</h3>
                     <small class="text-muted">Last 24 Hours</small>
                </div>
-               <h5 class="danger">+25%</h5>
-               <h3>849</h3>
+               <h3><?= $daftar_offline;?>+</h3>
           </div>
      </div>
-     <div class="item add-product">
+     <div class="item costumers">
+          <div class="icon">
+                    <span class="material-icons-sharp">groups</span>
+          </div>
+          <div class="right">
+               <div class="info">
+                    <a href="<?= base_url('user/all_user');?>">
+                    <h3>USER</h3>
+                    <small class="text-muted primary">User active : <?= $user_online?> User</small><br>
+                    <small class="text-muted danger">User non active : <?= $user_offline?> User</small>
+                    </a>
+               </div>
+               <h3><?= $user;?>+</h3>
+          </div>
+     </div>
+     <?php 
+     foreach ($kantor as $key => $value) {?>
+          <div class="item online">
+          <div class="icon">
+                    <span class="material-icons-sharp">home_work</span>
+          </div>
+          <div class="right">
+               <div class="info">
+                    <a href="<?= base_url('admin/kantor');?>">
+                    <h3>KANTOR</h3>
+                    <small class="text-muted"><?= $value->alamat?></small><br>
+                    <small class="text-muted">Telp.<?= $value->no_telp?></small>
+                    </a>
+               </div>
+               <h3 class="primary">
+                    <span class="material-icons-sharp" style="font-size: 1rem;">home_work</span>
+               </h3>
+          </div>
+     </div>
+     <?php }?>
+
+     <!-- <div class="item add-product">
           <div >
                <span class="material-icons-sharp">add</span>
                <h3>Add Product</h3>
           </div>
-     </div>
+     </div> -->
 </div>
 <!-- SALES ANALYTICS END -->
 

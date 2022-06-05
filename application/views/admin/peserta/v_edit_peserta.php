@@ -31,8 +31,10 @@
                       }
                          
                          echo form_open_multipart('crud_peserta/update/'.$peserta->id_peserta) ?>
-                              <h3>Form Daftar</h3>
+                              <h3>Form Edit</h3>
+                              <label for="">Nama Peserta*</label>
                               <input type="text" class="form-input"  name="username_peserta" value="<?= $peserta->username_peserta?>" autocomplete="off" placeholder="Username" required>
+                              <label for="">Tanggal Lahir*</label>
                               <div class="form2">
                                    <div hidden class="hidden">
                                    <input type="date" class="form-date">
@@ -41,15 +43,31 @@
                                    <input type="text" name="TTL" class="form-date" value="<?= $peserta->TTL?>" name="TTL" onfocus="(this.type='date')" 
                                    onblur="if(this.value) this.type='text'" placeholder="Tanggal lahir">
                               </div>
-                              <input type="file" class="form-input form-file" name="image_peserta" id="preview_gambar">
                               <div class="form2">
-                                   <input type="text" name="no_telp" class="form-input" value="<?= $peserta->no_telp?>" autocomplete="off" placeholder="No telp">
+                                   <div class="form-2">
+                                        <label for="">No Telp*</label>
+                                        <input type="text" name="no_telp" class="form-input" value="<?= $peserta->no_telp?>" autocomplete="off" placeholder="No telp">
+                                   </div>
+                                   <div class="form-2">
+                                   <label for="">Jenis Kelamin*</label>
                                    <select name="JK">
                                         <option value="<?=$peserta->JK?>"><?=$peserta->JK?></option>
                                         <option value="Male">Male</option>
                                         <option value="Female">Female</option>
                                    </select>
+                                   </div>
+              
                               </div>
+                              <label for="">Ganti foto*</label>
+                              <input type="file" name="image_peserta" class="file-form" id="preview_gambar">
+                              <label for="preview_gambar" class="file-form">
+                                   <span>
+                                        <i class="uil uil-image-plus"></i>
+                                        <p>Image</p>
+                                   </span>
+                                   Upload foto
+                              </label>
+                              <label for="">Alamat*</label>
                               <textarea placeholder="Alamat" name="alamat" class="form-input"><?= $peserta->alamat?></textarea>
                               <input type="submit" value="Save" class="btn">
                               <!-- <a href=""><span class="material-icons-sharp">send</span></a> -->

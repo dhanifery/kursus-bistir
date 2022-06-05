@@ -17,45 +17,61 @@ class User_login
                 $cek = $this->ci->m_auth->login_user($email, $password);
                 if ($cek){
                         if($cek['level_user'] == 1) {
-                                $data =[
-                                        'email' => $cek['email'],
-                                        'level_user' => $cek['level_user'],
-                                        'nama_user' => $cek['nama_user'],
-                                        'id_user' => $cek['id_user'],
-                                      ];
-                                   $this->ci->session->set_userdata($data);
-                                // redirect
-                                echo "<script>
-                                alert('Selamat anda berhasil login');
-                                window.location='" .site_url('admin'),"';
-                                </script>";
+                                if ($cek['is_active'] == 1) {
+                                        $data =[
+                                                'email' => $cek['email'],
+                                                'level_user' => $cek['level_user'],
+                                                'nama_user' => $cek['nama_user'],
+                                                'id_user' => $cek['id_user'],
+                                              ];
+                                           $this->ci->session->set_userdata($data);
+                                        // redirect
+                                        echo "<script>
+                                        alert('Selamat anda berhasil login');
+                                        window.location='" .site_url('admin'),"';
+                                        </script>";
+                                }else{
+                                        $this->ci->session->set_flashdata('error', 'User tidak aktif !!!');
+                                        redirect('auth/login_user');
+                                }
                               }elseif($cek['level_user'] == 2){
-                                $data =[
-                                        'email' => $cek['email'],
-                                        'level_user' => $cek['level_user'],
-                                        'nama_user' => $cek['nama_user'],
-                                        'id_user' => $cek['id_user'],
-                                      ];
-                                   $this->ci->session->set_userdata($data);
-                                // redirect
-                                echo "<script>
-                                alert('Selamat anda berhasil login');
-                                window.location='" .site_url('peserta'),"';
-                                </script>";    
+                                if ($cek['is_active'] == 1) {
+                                        $data =[
+                                                'email' => $cek['email'],
+                                                'level_user' => $cek['level_user'],
+                                                'nama_user' => $cek['nama_user'],
+                                                'id_user' => $cek['id_user'],
+                                              ];
+                                           $this->ci->session->set_userdata($data);
+                                        // redirect
+                                        echo "<script>
+                                        alert('Selamat anda berhasil login');
+                                        window.location='" .site_url('peserta'),"';
+                                        </script>";
+                                }else{
+                                        $this->ci->session->set_flashdata('error', 'User tidak aktif !!!');
+                                        redirect('auth/login_user');
+                                }    
                               }
                               else{
-                                $data =[
-                                        'email' => $cek['email'],
-                                        'level_user' => $cek['level_user'],
-                                        'nama_user' => $cek['nama_user'],
-                                        'id_user' => $cek['id_user'],
-                                      ];
-                                   $this->ci->session->set_userdata($data);
-                                // redirect
-                                echo "<script>
-                                alert('Selamat anda berhasil login');
-                                window.location='" .site_url('instruktur'),"';
-                                </script>";   
+                                if ($cek['is_active']==1) {
+                                        $data =[
+                                                'email' => $cek['email'],
+                                                'level_user' => $cek['level_user'],
+                                                'nama_user' => $cek['nama_user'],
+                                                'id_user' => $cek['id_user'],
+                                              ];
+                                           $this->ci->session->set_userdata($data);
+                                        // redirect
+                                        echo "<script>
+                                        alert('Selamat anda berhasil login');
+                                        window.location='" .site_url('instruktur'),"';
+                                        </script>";   
+                                }else{
+                                        $this->ci->session->set_flashdata('error', 'User tidak aktif !!!');
+                                        redirect('auth/login_user');
+                                }
+                               
                               }
                 } else{
                         // jika salah

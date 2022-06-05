@@ -25,6 +25,7 @@
                          
                          echo form_open_multipart('admin/ganti_password/'.$user->id_user) ?>
                               <h3>Form Ganti Password</h3>
+                              <label for="">Password Lama*</label>
                               <input type="password" class="form-input" value="<?= $user->password?>" autocomplete="off" placeholder="Password Lama"  readonly>
                               <div class="form2">
                                  <input type="password" class="form-input" name="password"  autocomplete="off" placeholder="Password Baru" autofocus required>

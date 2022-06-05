@@ -48,4 +48,14 @@ class Home extends CI_Controller {
 		$this->load->view('layout/v_rinci_mobil', $data, FALSE);
 
 	}
+	public function kantor()
+	{
+		$data = array(
+			'title'=> 'Courses B I S T I R',
+			'sub_title'=> 'Kantor BISTIR',
+			'kantor'=> $this->m_home->get_kantor(),
+		);
+		$this->load->view('layout/v_kantor', $data, FALSE);
+
+	}
 }

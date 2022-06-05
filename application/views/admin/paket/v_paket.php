@@ -39,30 +39,35 @@
           <table id="datatable" class="compact">
                <thead>
                     <tr>
+                         <th>No</th>
                          <th>Nama Paket</th>
                          <th>Mobil</th>
                          <th>Pertemuan</th>
+                         <th>Transmisi</th>
                          <th>Harga</th>
                          <th>Actions</th>
                     </tr>
                </thead> 
                <tbody>
                     <?php
+                    $no =1;
                     foreach ($paket as $key => $value) {?>
                     <tr>
-                         <td><?= $value->nama_paket?></td>
-                         <td><?= $value->nama_mobil ?> (
-                              <?php if ($value->jenis_mobil ==1) {?>
-                                   Manual
-                              <?php }else{?>
-                                   Matic
-                              <?php }?>
-                              )</td>
+                         <td><?= $no++?></td>
+                         <td style="font-weight:bold;"><?= $value->nama_paket?></td>
+                         <td><?= $value->nama_mobil ?>
+                         </td>
                          <td><?= $value->byk_pertemuan?></td>
+                         <td><?php if ($value->jenis_mobil ==1) {?>
+                                   <p class="primary">Manual</p>
+                              <?php }else{?>
+                                   <p class="warning">Matic</p>
+                              <?php }?>
+                              </td>
                          <td>Rp.<?= number_format($value->harga,0)?></td>
                          <td class="primary">
                               <a href="<?= base_url('paket/update/'.$value->id_paket)?>"><i class="uil uil-pen"></i></a>
-                              <a href="<?= base_url('paket/delete/'.$value->id_paket)?>"><i class="uil uil-trash"></i></a>
+                              <a href="<?= base_url('paket/delete/'.$value->id_paket)?>" onclick="return confirm('Yakin hapus data <?= $value->nama_paket?> ?')"><i class="uil uil-trash"></i></a>
                          </td>
                     </tr>    
                     <?php }?>

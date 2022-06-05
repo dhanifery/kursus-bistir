@@ -41,7 +41,15 @@
                                    <input type="text" name="TTL" class="form-date" value="<?= set_value('TTL')?>" name="TTL" onfocus="(this.type='date')" 
                                    onblur="if(this.value) this.type='text'" placeholder="Tanggal lahir">
                               </div>
-                              <input type="file" class="form-input form-file" name="image_peserta" id="preview_gambar" required>
+                              <input type="file" name="image_peserta" class="file-form" id="preview_gambar">
+                              <label for="preview_gambar" class="file-form">
+                                   <span>
+                                        <i class="uil uil-image-plus"></i>
+                                        <p>Image</p>
+                                   </span>
+                                   Upload foto
+                              </label>
+
                               <div class="form2">
                                    <input type="text" name="no_telp" class="form-input" value="<?= set_value('no_telp')?>" autocomplete="off" placeholder="No telp">
                                    <select name="JK">

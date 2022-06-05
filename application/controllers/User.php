@@ -33,11 +33,15 @@ class User extends CI_Controller {
                 $this->form_validation->set_rules('email', 'Email', 'required',
                 array('required'=>'%s Harus Diisi !!!!'
         ));
-                $this->form_validation->set_rules('is_active', 'Is Active', 'required',
+                $this->form_validation->set_rules('is_active', 'User Active', 'required',
                 array('required'=>'%s Harus Diisi !!!!'
         ));                
                 $this->form_validation->set_rules('password', 'Password', 'required',
                 array('required'=>'%s Harus Diisi !!!!'
+        ));
+                $this->form_validation->set_rules('ulangi_password', 'Password', 'required|matches[password]',
+                array('required'=>'%s Harus Diisi !!!!',
+                        'matches'=>'%s Tidak Sama !!!'
         ));
                 $this->form_validation->set_rules('level_user', 'Level user', 'required',
                 array('required'=>'%s Harus Diisi !!!!'
@@ -54,8 +58,8 @@ class User extends CI_Controller {
                 $field_name = "image";
                 if (!$this->upload->do_upload($field_name)) {
                         $data = array(
-                                'title' => 'Admin',
-                                'sub_title' => 'Daftar Admin',
+                                'title' => 'User',
+                                'sub_title' => 'Add User',
                                 'error_upload' => $this->upload->display_errors(),
 			        'admin' => $this->m_user->cek_data(['email' => $this->session->userdata('email')])->row_array(),
                                 'isi' => 'admin/user_admin/v_tambah_user',
@@ -78,13 +82,13 @@ class User extends CI_Controller {
                         );
                         $this->m_user->add($data);
                         $this->session->set_flashdata('pesan', 'Data berhasil ditambahkan !!!!');
-                        redirect('user');                
+                        redirect('user/all_user');                
                 }
         }
 
                 $data = array(
-			'title' => 'Admin',
-                        'sub_title' => 'Add Admin',
+			'title' => 'User',
+                        'sub_title' => 'Add User',
                         'user' => $this->m_user->get_data_row(),
 			'admin' => $this->m_user->cek_data(['email' => $this->session->userdata('email')])->row_array(),
 			'isi' => 'admin/user_admin/v_tambah_user',
@@ -137,7 +141,7 @@ class User extends CI_Controller {
                                 'image' => $upload_data['uploads']['file_name'],
                                 );
                         $this->m_user->update($data);
-                        $this->session->set_flashdata('pesan', 'Data berhasil ditambahkan !!!!');
+                        $this->session->set_flashdata('pesan', 'Data berhasil diubah !!!!');
                         redirect('user');
                         
                 }
@@ -222,4 +226,71 @@ class User extends CI_Controller {
                 $this->load->view('layout/backend/v_wrapper_backend', $data ,FALSE);        
         }
 
+
+        public function all_user()
+        {
+        $data = array(
+                'title' => 'User',
+                'sub_title' => 'Daftar User',
+                'admin' => $this->m_user->cek_data(['email' => $this->session->userdata('email')])->row_array(),
+                'user'=> $this->m_user->get_all_data(),
+                'isi' => 'admin/user/v_user',
+        );
+        $this->load->view('layout/backend/v_wrapper_backend', $data ,FALSE);
+        }
+
+
+
+        public function update_user($id_user = NULL)
+        {
+                $this->form_validation->set_rules('nama_user', 'Nama User', 'required',
+                array('required'=>'%s Harus Diisi !!!!'
+        ));
+        if($this->form_validation->run() == FALSE)
+        {
+                $data = array(
+                        'title' => 'User',
+                        'sub_title' => 'Edit User',
+                        'admin' => $this->m_user->cek_data(['email' => $this->session->userdata('email')])->row_array(),
+                        'user'=> $this->m_user->get_data($id_user),
+                        'isi' => 'admin/user/v_update_user',
+                );
+                $this->load->view('layout/backend/v_wrapper_backend', $data ,FALSE);
+        }else{
+                $data = array(
+                        'id_user' => $id_user,
+                        'nama_user' => $this->input->post('nama_user'),
+                        'is_active' => $this->input->post('is_active'),
+                        'level_user' => $this->input->post('level_user'),
+                        );
+                $this->m_user->update($data);
+                $this->session->set_flashdata('pesan', 'Data berhasil diubah !!!!');
+                redirect('user/all_user');
+        }
+
+                $data = array(
+                        'title' => 'User',
+                        'sub_title' => 'Edit User',
+                        'admin' => $this->m_user->cek_data(['email' => $this->session->userdata('email')])->row_array(),
+                        'user'=> $this->m_user->get_data($id_user),
+                        'isi' => 'admin/user/v_update_user',
+                );
+                $this->load->view('layout/backend/v_wrapper_backend', $data ,FALSE);
+        }
+
+        //Delete one item
+        public function delete_user($id_user = NULL)
+        {
+                // hapus gambar
+                $user = $this->m_user->get_data($id_user);
+                if ($user->image != "" ) {
+                        unlink('./assets/images/user/'.$user->image);
+                }
+                // end hapus gambar
+
+                $data = array('id_user' => $id_user);
+                $this->m_user->delete($data);
+                $this->session->set_flashdata('pesan', 'Data Berhasil dihapus !!!');
+                redirect('user/all_user');
+        }
 }

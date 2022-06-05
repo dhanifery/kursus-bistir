@@ -33,19 +33,30 @@
                          echo form_open_multipart('user/add') ?>
                               <h3>Form Daftar</h3>
                               <input type="text" class="form-input" name="nama_user"  value="<?= set_value('nama_user')?>"autocomplete="off" placeholder="Username" required>
+                              <input type="email" name="email" class="form-input" value="<?= set_value('email')?>" autocomplete="off" placeholder="Email">
+
                               <div class="form2">
-                                   <input type="email" name="email" class="form-input" value="<?= set_value('email')?>" autocomplete="off" placeholder="Email">
                                    <input type="password" name="password" class="form-input" value="<?= set_value('password')?>" autocomplete="off" placeholder="Password">
+                                   <input type="password" name="ulangi_password" class="form-input" value="<?= set_value('ulangi_password')?>" autocomplete="off" placeholder="Ulangi Password">
                               </div>
-                              <input type="file" class="form-input form-file" name="image" id="preview_gambar" required>
+                              <input type="file" name="image" class="file-form" id="preview_gambar">
+                              <label for="preview_gambar" class="file-form">
+                                   <span>
+                                        <i class="uil uil-image-plus"></i>
+                                        <p>Image</p>
+                                   </span>
+                                   Upload foto
+                              </label>
                               <div class="form2">
                                    <select name="is_active">
-                                        <option value=""> Is Active</option>
+                                        <option value=""> User Active</option>
                                         <option value="1"> Active </option>
                                    </select>
                                    <select name="level_user">
                                         <option value=""> Level User</option>
                                         <option value="1"> Admin </option>
+                                        <option value="2"> Peserta </option>
+                                        <option value="3"> Instruktur </option>
                                    </select>
                               </div>
                               <input type="submit" value="Save" class="btn">

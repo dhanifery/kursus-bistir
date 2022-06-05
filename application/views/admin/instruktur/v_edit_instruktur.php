@@ -31,26 +31,49 @@
                          }
                          
                          echo form_open_multipart('crud_instruktur/update/'.$instruktur->id_instruktur) ?>
-                              <h3>Form Daftar</h3>
+                              <h3>Form Edit</h3>
+                              <label for="">Nama Instruktur*</label>
                               <input type="text" class="form-input"  name="username_instr" value="<?= $instruktur->username_instr?>" autocomplete="off" placeholder="Username" required>
                               <div class="form2">
-                                   <input type="text" class="form-input"  name="honor" value="<?= $instruktur->honor?>" autocomplete="off" placeholder="Honor">
-                                   <div hidden class="hidden">
-                                        <input type="hidden" class="form-input" name="email_instr" value="<?= $instruktur->email_instr?>">
-                                        <input type="date" class="form-date">
+                                   <div class="form-2">
+                                        <label for="">Honor*</label>
+                                        <input type="text" class="form-input"  name="honor" value="<?=$instruktur->honor;?>" autocomplete="off" placeholder="Honor">
                                    </div>
-                                   <input type="text" name="TTL" class="form-date" value="<?= $instruktur->TTL?>" name="TTL" onfocus="(this.type='date')" 
-                                   onblur="if(this.value) this.type='text'" placeholder="Tanggal lahir">
+                                   <div class="form-2">
+                                        <label for="">Tanggal Lahir*</label>
+                                        <div hidden class="hidden">
+                                             <input type="hidden" class="form-input" name="email_instr" value="<?= $instruktur->email_instr?>">
+                                             <input type="date" class="form-date">
+                                        </div>
+                                        <input type="text" name="TTL" class="form-date" value="<?= $instruktur->TTL?>" name="TTL" onfocus="(this.type='date')" 
+                                        onblur="if(this.value) this.type='text'" placeholder="Tanggal lahir">
+                                   </div>
+
                               </div>
-                              <input type="file" class="form-input form-file" name="image_instr" id="preview_gambar">
+                              <label for="">Ganti foto*</label>
+                              <input type="file" name="image_instr" class="file-form" id="preview_gambar">
+                              <label for="preview_gambar" class="file-form">
+                                   <span>
+                                        <i class="uil uil-image-plus"></i>
+                                        <p>Image</p>
+                                   </span>
+                                   Upload foto
+                              </label>
                               <div class="form2">
-                                   <input type="text" name="no_telp" class="form-input" value="<?= $instruktur->no_telp?>" autocomplete="off" placeholder="No telp">
-                                   <select name="JK">
-                                        <option value="<?=$instruktur->JK?>"><?=$instruktur->JK?></option>
-                                        <option value="Male">Male</option>
-                                        <option value="Female">Female</option>
-                                   </select>
+                                   <div class="form-2">
+                                        <label for="">No Telp*</label>
+                                        <input type="text" name="no_telp" class="form-input" value="<?= $instruktur->no_telp?>" autocomplete="off" placeholder="No telp">
+                                   </div>
+                                   <div class="form-2">
+                                        <label for="">Jenis Kelamin*</label>                                      
+                                        <select name="JK">
+                                             <option value="<?=$instruktur->JK?>"><?=$instruktur->JK?></option>
+                                             <option value="Male">Male</option>
+                                             <option value="Female">Female</option>
+                                        </select>
+                                   </div>
                               </div>
+                              <label for="">Deskripsi*</label>
                               <textarea placeholder="Deskripsi" name="deskripsi_instr" class="form-input"><?= $instruktur->deskripsi_instr?></textarea>
                               <input type="submit" value="Save" class="btn">
                               <!-- <a href=""><span class="material-icons-sharp">send</span></a> -->

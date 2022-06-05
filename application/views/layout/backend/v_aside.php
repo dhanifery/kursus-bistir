@@ -34,6 +34,7 @@
                          }?>"><span class="material-icons-sharp">groups</span>
                               <h3>Data Admin</h3>
                          </a>
+                         
                          <p>Paket dan Mobil</p>
                          <a href="<?= base_url('paket'); ?>" class="<?php if($this->uri->segment(1)== 'paket'){
                          echo "active";
@@ -58,6 +59,7 @@
                          }?>"><span class="material-icons-sharp">receipt_long</span>
                               <h3>Laporan Transaksi</h3>
                          </a>
+                         
                          <a href="<?= base_url('auth/logout_user');?>"><span class="material-icons-sharp">logout</span>
                               <h3>Logout</h3>
                          </a>

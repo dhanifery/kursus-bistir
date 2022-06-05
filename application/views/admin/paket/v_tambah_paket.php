@@ -48,7 +48,7 @@
                                         <?php }?>
                                 </select>
                               </div>
-                              <input type="file" class="form-input form-file" name="image" id="preview_gambar" required>
+                              
                               <div class="form2">
                                    <input type="text" name="harga" class="form-input" value="<?= set_value('harga')?>" autocomplete="off" 
                                    placeholder="Harga">
@@ -59,6 +59,14 @@
                                         <option value="12 Pertemuan">12 Pertemuan</option>
                                    </select>
                               </div>
+                              <input type="file" name="image" class="file-form" id="preview_gambar">
+                              <label for="preview_gambar" class="file-form">
+                                   <span>
+                                        <i class="uil uil-image-plus"></i>
+                                        <p>Image</p>
+                                   </span>
+                                   Upload foto
+                              </label>
                               <textarea placeholder="Deskripsi" name="deskripsi_paket" value="<?= set_value('deskripsi_paket')?>" class="form-input"></textarea>
                               <input type="submit" value="Save" class="btn">
                               <!-- <a href=""><span class="material-icons-sharp">send</span></a> -->

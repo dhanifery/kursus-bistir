@@ -30,8 +30,10 @@
                          
                          echo form_open_multipart('paket/update/'.$paket->id_paket) ?>
                               <h3>Form Edit Paket</h3>
+                              <label for="">Nama Paket*</label>
                               <input type="hidden" class="form-input"  name="id_paket"  value="<?= $paket->id_paket?>"autocomplete="off">
                               <input type="text" class="form-input"  name="nama_paket"  value="<?= $paket->nama_paket?>"autocomplete="off" placeholder="Nama Paket" required>
+                              <label for="">Mobil*</label>
                               <div class="form2">
                                    <select name="id_mobil" class="form-input">
                                                         <option value="<?= $paket->id_mobil?>"><?= $paket->nama_mobil?><?php if ($paket->jenis_mobil == 1) {?>
@@ -52,16 +54,32 @@
                                         </select>
                               </div>
                               <div class="form2">
-                                   <input type="text" name="harga" class="form-input" value="<?= $paket->harga?>" autocomplete="off" 
-                                   placeholder="Harga">
-                                   <select name="byk_pertemuan">
-                                        <option value="<?= $paket->byk_pertemuan?>"><?= $paket->byk_pertemuan?></option>
-                                        <option value="8 Pertemuan">8 Pertemuan</option>
-                                        <option value="10 Pertemuan">10 Pertemuan</option>
-                                        <option value="12 Pertemuan">12 Pertemuan</option>
-                                   </select>
+                                <div class="form-2">
+                                        <label for="">Harga Paket*</label>
+                                        <input type="text" name="harga" class="form-input" value="<?= $paket->harga?>" autocomplete="off" 
+                                        placeholder="Harga">
+                                </div>
+                                <div class="form-2">
+                                        <label for="">Banyak Pertemuan*</label>
+                                        <select name="byk_pertemuan">
+                                                <option value="<?= $paket->byk_pertemuan?>"><?= $paket->byk_pertemuan?></option>
+                                                <option value="8 Pertemuan">8 Pertemuan</option>
+                                                <option value="10 Pertemuan">10 Pertemuan</option>
+                                                <option value="12 Pertemuan">12 Pertemuan</option>
+                                        </select>
+                                </div>
+              
                               </div>
-                              <input type="file" class="form-input form-file" name="image" id="preview_gambar" >
+                              <label for="">Ganti foto Paket*</label>
+                              <input type="file" name="image" class="file-form" id="preview_gambar">
+                              <label for="preview_gambar" class="file-form">
+                                   <span>
+                                        <i class="uil uil-image-plus"></i>
+                                        <p>Image</p>
+                                   </span>
+                                   Upload foto
+                              </label>
+                              <label for="">Deskripsi Paket*</label>
                               <textarea placeholder="Deskripsi" name="deskripsi_paket" value="" class="form-input"><?= $paket->deskripsi_paket?></textarea>
                               <input type="submit" value="Save" class="btn">
                               <!-- <a href=""><span class="material-icons-sharp">send</span></a> -->

@@ -547,6 +547,9 @@ main .recent-orders .tambah-data .tambahdata{
 .admin{
      top: 0;
 }
+.info-gambar{
+     top: -3rem;
+}
 .contact-info img{
      border-radius: 50%;
      width: 11rem;
@@ -590,6 +593,11 @@ main .recent-orders .tambah-data .tambahdata{
      transition: 0.3s background-color;
 }
 
+.contact-form label{
+     margin-left: 1.5rem;
+     font-weight: 600;
+}
+
 .form-mobil{
      margin-top: 1rem;
      width: 100% auto;
@@ -611,20 +619,50 @@ textarea.form-input{
      min-height: 130px;
 }
 
-
-::-webkit-file-upload-button{
-     background-color: var(--color-primary);
-     color:#fff;
-     outline: none;
-     filter: brightness(97%);
-     cursor: pointer;
-     border: none;
-     border-radius: 17px;
-     padding: 0.9rem 1.5rem;
-}
 .contact-form input[type="file"]{
      cursor: pointer;
+     display: none;
 }
+
+.file-form{
+     display: inline-flex;
+     background: var(--bg-color-3);
+     border: 2px solid var(--bg-color-3);
+     width: 100%;
+     border-radius: 17px;
+     filter: brightness(90%);
+     font-family: inherit;
+     font-size: 0.85rem;
+     cursor: pointer;
+     font-weight: 400;
+     color: var(--heading-color);
+     outline: none;
+     gap: 1rem;
+     transition: 0.3s;
+}
+.file-form span{
+     background-color: var(--color-primary);
+     width: 7.5rem;
+     border-radius: 17px;
+     padding: 0.4rem 1.5rem;
+     color: #fff;
+     align-items: center;
+     display: flex;
+     gap: 0.5rem;
+     justify-content: center;
+     font-size: 1.5rem;
+}
+.file-form span p{
+     font-size: 0.9rem;
+     font-weight: 500;
+     color: #fff;
+}
+.contact-form label.file-form{
+     margin: 0;
+     align-items: center;
+     margin-bottom: 1.5rem;
+}
+
 .contact-form .form-input{
      margin-bottom: 1.5rem;
 }
@@ -673,6 +711,10 @@ textarea.form-input{
      outline: none;
      transition: 0.3s;
 }
+.form-jadwal{
+     background-color: var(--color-primary);
+     color: #fff;
+}
 .form-date{
      margin-bottom: 1.5rem;
      
@@ -701,7 +743,7 @@ textarea.form-input{
      color: var(--text-color);
 }
 
-.form-input:hover,
+.form-input:hover,.file-form:hover,
 .contact-form select:hover{
      filter: brightness(97%);
 }
@@ -740,6 +782,13 @@ textarea.form-input{
      font-family: inherit;
      cursor: pointer;
      transition: 0.3s;
+}
+.btn-edit{
+     border-radius: 10px;
+     color: #fff;
+}
+.btn-edit p{
+     width: 5rem;
 }
 .btn-jadwal{
      padding: 0.3rem 0.5rem;
@@ -876,6 +925,18 @@ textarea.form-input{
      text-decoration: none;
      cursor: pointer;
 }
+.btnClose2{
+     color:var(--color-dark);
+     float:right;
+     font-size: 30px;
+
+}
+.btnClose2:hover,.btnClose2:focus{
+     text-decoration: none;
+     cursor: pointer;
+}
+
+
 
 @keyframes modalopen{
      from{opacity: 0}

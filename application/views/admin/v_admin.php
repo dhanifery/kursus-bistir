@@ -12,21 +12,11 @@
  <div class="insights">
                          <!-- SALES START -->
                          <div class="sales">
-                              <span class="material-icons-sharp">analytics</span>
+                              <span class="material-icons-sharp">person</span>
                               <div class="middle">
                                    <div class="left">
-                                        <h3>Total Sales</h3>
-                                        <h1>$25,024</h1>
-                                   </div>
-                                   <div class="progress">
-                                        <svg>
-                                             <circle cx='38' cy='38' r='36'></circle>
-                                        </svg>
-                                        <div class="number">
-                                             <div class="number">
-                                                  <p>50%</p>
-                                             </div>
-                                        </div>
+                                        <h3>Total Peserta</h3>
+                                        <h1><?= $total_peserta;?>+</h1>
                                    </div>
                               </div>
                               <small class="text-muted">Last 24 Hours</small>
@@ -36,19 +26,11 @@
 
                          <!-- EXPENSES START -->
                          <div class="expenses">
-                              <span class="material-icons-sharp">bar_chart</span>
+                              <span class="material-icons-sharp">group</span>
                               <div class="middle">
                                    <div class="left">
-                                        <h3>Total Expenses</h3>
-                                        <h1>$14,168</h1>
-                                   </div>
-                                   <div class="progress">
-                                        <svg>
-                                             <circle cx='38' cy='38' r='36'></circle>
-                                        </svg>
-                                        <div class="number">
-                                             <p>62%</p>
-                                        </div>
+                                        <h3>Total Instruktur</h3>
+                                        <h1><?= $total_instruktur;?>+</h1>
                                    </div>
                               </div>
                               <small class="text-muted">Last 24 Hours</small>
@@ -60,16 +42,8 @@
                               <span class="material-icons-sharp">stacked_line_chart</span>
                               <div class="middle">
                                    <div class="left">
-                                        <h3>Total Income</h3>
-                                        <h1>$10,864</h1>
-                                   </div>
-                                   <div class="progress">
-                                        <svg>
-                                             <circle cx='38' cy='38' r='36'></circle>
-                                        </svg>
-                                        <div class="number">
-                                             <p>44%</p>
-                                        </div>
+                                        <h3>Total Jadwal</h3>
+                                        <h1><?= $total_jadwal;?></h1>
                                    </div>
                               </div>
                               <small class="text-muted">Last 24 Hours</small>
@@ -81,39 +55,43 @@
 
                     <!-- RECENT ORDERS START -->
                <div class="recent-orders">
-                    <h2>Daftar Jadwal</h2>
+                    <h2>Daftar Jadwal Aktif</h2>
                     <table id="datatable" class="compact">
                          <thead>
-                              <tr>
-                                   <th>Product Name</th>
-                                   <th>Product Number</th>
-                                   <th>Payment</th>
-                                   <th>Status</th>
-                                   <th></th>
-                              </tr>
+                         <tr>
+                                   <th>No</th>
+                                   <th>Kode Jadwal</th>
+                                   <th>Peserta</th>
+                                   <th>Instruktur</th>
+                                   <th>Paket</th>
+                                   <th>QR Code</th>
+                                   <th>Actions</th>
+                         </tr>
                          </thead>
                          <tbody>
-                              <tr>
-                                   <td>Foldable over Drone</td>
-                                   <td>85631</td>
-                                   <td>Due</td>
-                                   <td class="warning">Pending</td>
-                                   <td class="primary">Details</td>
-                              </tr>                         
-                              <tr>
-                                   <td>Foldable over Drone</td>
-                                   <td>85631</td>
-                                   <td>Due</td>
-                                   <td class="warning">Pending</td>
-                                   <td class="primary">Details</td>
-                              </tr>                         
-                              <tr>
-                                   <td>Foldable over Drone</td>
-                                   <td>85631</td>
-                                   <td>Due</td>
-                                   <td class="warning">Pending</td>
-                                   <td class="primary">Details</td>
-                              </tr>
+                         <?php
+                         $no = 1;
+                         foreach ($active as $key => $value) {?>        
+                         <tr>
+                                   <td><?= $no++?></td>
+                                   <td style="font-weight: bold;"><?= $value->kode_jadwal?></td>
+                                   <td><?= $value->username_peserta;?></td>
+                                   <?php
+                                        if ($value->username_instr == "") {?>
+                                                  <td class="warning">None</td> 
+                                   <?php }else{?>
+                                        <td><?= $value->username_instr;?></td>
+                                   <?php }?>
+                                   <td><?= $value->nama_paket;?></td>
+                                        <?php
+                                                  if ($value->status_jadwal == 2) {?>
+                                                            <td>
+                                                            <a href="<?= base_url('jadwal_admin/qr_code/'.$value->id_jadwal)?>" class="btn btn-jadwal jadwal-danger" ><p>QR-Code</p></a>   
+                                                            </td>
+                                                  <?php }?>
+                                   <td>-</td>
+                         </tr>
+                         <?php }?>                         
                          </tbody>
                     </table>
                </div>
