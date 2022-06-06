@@ -74,7 +74,7 @@
                                                                         <input type="text" name="TTL" class="form-date" value="<?= set_value('TTL')?>" name="TTL" onfocus="(this.type='date')" 
                                                                         onblur="if(this.value) this.type='text'" placeholder="Tanggal lahir">
                                                         </div>
-                                                        <input type="file" class="file-form" name="image_peserta" value=""  id="preview_gambar" required>
+                                                        <input type="file" class="file-form" name="image_instr" value=""  id="preview_gambar" required>
                                                         <label for="preview_gambar" class="file-form">
                                                                 <span>
                                                                         <i class="uil uil-image-plus"></i>
