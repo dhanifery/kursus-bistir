@@ -6,7 +6,7 @@
                                                 
                                         </div>
                                         <div class="images">
-                                                <img class="showImage" src="<?= base_url('assets/images/home/285127.jpg')?>">   
+                                                <img class="showImage" src="<?= base_url('assets/images/default.jpg')?>">   
                                         </div>
                                         <div class="next-btn navigation">
                                                 
@@ -55,7 +55,7 @@
                                         <div class="portfolio-gallery galeri-daftar">
                                                 <div class="mix prt-card card-kursus">
                                                         <div class="prt-image image-kursus">
-                                                        <img src="<?= base_url('assets/images/home/285127.jpg')?>" id="gambar_load">
+                                                        <img src="<?= base_url('assets/images/default.jpg')?>" id="gambar_load">
                                                                 <div class="prt-overlay">
                                                                         <span class="prt-icon zoom-icon" style="--i: 0s">
                                                                                 <i class="uil uil-search-plus"></i>
@@ -74,7 +74,15 @@
                                                                         <input type="text" name="TTL" class="form-date" value="<?= set_value('TTL')?>" name="TTL" onfocus="(this.type='date')" 
                                                                         onblur="if(this.value) this.type='text'" placeholder="Tanggal lahir">
                                                         </div>
-                                                        <input type="file" class="form-input file-form" name="image_instr" id="preview_gambar"  required>
+                                                        <input type="file" class="file-form" name="image_peserta" value=""  id="preview_gambar" required>
+                                                        <label for="preview_gambar" class="file-form">
+                                                                <span>
+                                                                        <i class="uil uil-image-plus"></i>
+                                                                        <p>Image</p>
+                                                                </span>
+                        
+                                                                Upload foto...
+                                                        </label>
                                                         <div class="form2">
                                                                 <input type="text" class="form-input" name="no_telp" value="<?= set_value('no_telp')?>" placeholder="No telp" >
                                                                 <select name="JK">
