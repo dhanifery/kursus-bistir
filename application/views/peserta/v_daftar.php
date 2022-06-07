@@ -35,10 +35,10 @@
                                 // notifikasi gagal upload gambar
 
                                 if (isset($error_upload)) {
-                                        echo '<div class="alert alert-sm-fl error" id="alert">
+                                        echo '<div class="alert alert-sm error" id="alert">
                                         <button type="button" class="closeBtn">&times;</button>
-                                        <h5><i class="fa-solid fa-circle-xmark"></i>'.$error_upload.'</h5></div>';
-                         }
+                                        <h5><i class="icon fas fa-solid fa-circle-xmark"></i>Alert!</h5>'."Format gambar tidak diketahui!!!".'</div>';
+                                }
     
 
                                 echo form_open_multipart('daftar_kursus/add_peserta')?>

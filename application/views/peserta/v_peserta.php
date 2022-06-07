@@ -8,11 +8,11 @@
                                         </p>
                                         <div class="cta">
                                                 <a href="<?= base_url('jadwal/jadwal_peserta')?>" class="btn">Courses now</a>
-                                                <a href="" download class="btn secondary-btn">Pelajari selengkapnya</a>
+                                                <a href="<?= base_url('assets/images/modul/modul peserta.pdf')?>" class="btn secondary-btn">Pelajari selengkapnya</a>
                                         </div>
                                 </div>
                                 <div class="showcase-image">
-                                        <img src="<?= base_url()?>/assets/images/home/ff.png" class="person" alt="Markus">
+                                        <img src="<?= base_url()?>/assets/images/home/car.png" class="person" alt="Markus">
                                         <img src="<?= base_url()?>/assets/images/home/circle1.png" class="shape circle" alt="">
                                         <img src="<?= base_url()?>/assets/images/home/dots.png" class="shape dots" alt="">
                                 </div>

@@ -31,6 +31,8 @@
                     <ul class="profile_ul">
                     <li class="profile_li"><a class="profile" href="<?= base_url('admin/myprofil/' .$admin['id_user']);?>"><span class="material-icons-sharp">person_outline</span> My Profile</a>
                     </li>
+                    <li class="profile_li"><a class="profile" href="<?= base_url('assets/images/modul/modul admin.pdf');?>"><span class="material-icons-sharp">book</span> Penggunaan</a>
+                    </li>
                     <li class="profile_li"><a class="profile" href="<?= base_url('auth/logout_user')?>"><span class="material-icons-sharp">logout</span> Log Out </a></li>
                     </ul>
                </div>

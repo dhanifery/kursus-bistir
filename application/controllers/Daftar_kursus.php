@@ -75,6 +75,7 @@ class Daftar_kursus extends CI_Controller {
                 $this->form_validation->set_rules('JK', 'Jenis Kelamin', 'required',
                 array('required'=>'%s Harus Diisi !!!!'
         ));
+        
 
         if($this->form_validation->run() == TRUE)
         {
@@ -93,7 +94,7 @@ class Daftar_kursus extends CI_Controller {
                                 'isi' => 'peserta/v_daftar',
         
                         );
-                        $this->load->view('layout/frontend/v_wrapper_backend', $data,FALSE);
+                        $this->load->view('layout/frontend/v_wrapper_frontend', $data,FALSE);
                 }else {
                         $upload_data = array('uploads' => $this->upload->data());
                         $config['image_library'] = 'gd2';

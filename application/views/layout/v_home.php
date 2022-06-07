@@ -11,7 +11,7 @@
 
         <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
         <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
-        <link rel="stylesheet" href="<?= base_url()?>/assets/css/home-utama.css">
+        <link rel="stylesheet" href="<?= base_url()?>/assets/css/home.css">
 </head>
 <body>
         <div class="overlay"></div>
@@ -78,11 +78,11 @@
                                         </p>
                                         <div class="cta">
                                                 <a href="<?= base_url('auth/login_user')?>" class="btn">Courses Now</a>
-                                                <a href="#"  class="btn secondary-btn">Pelajari Selengkapnya</a>
+                                                <a href="<?= base_url('assets/images/modul/modul home.pdf')?>"  class="btn secondary-btn">Pelajari Selengkapnya</a>
                                         </div>
                                 </div>
                                 <div class="showcase-image">
-                                        <img src="<?= base_url()?>/assets/images/home/ff.png" class="person" alt="Markus">
+                                        <img src="<?= base_url()?>/assets/images/home/car.png" class="person" alt="Markus">
                                         <img src="<?= base_url()?>/assets/images/home/circle1.png" class="shape circle" alt="">
                                         <img src="<?= base_url()?>/assets/images/home/dots.png" class="shape dots" alt="">
                                 </div>

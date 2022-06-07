@@ -11,7 +11,7 @@
 
         <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
         <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
-        <link rel="stylesheet" href="<?= base_url()?>/assets/css/home-utama.css">
+        <link rel="stylesheet" href="<?= base_url()?>/assets/css/home.css">
 </head>
 <body>
         <div class="overlay"></div>

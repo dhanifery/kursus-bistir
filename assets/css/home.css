@@ -587,8 +587,8 @@ body.open .hamburger .bar:last-child{
 
 .showcase-image .person{
         position: absolute;
-        width: 95%;
-        bottom: 5%;
+        width: 99%;
+        bottom: 19%;
         left: 50%;
         transform: translateX(-50%);
 }
