@@ -83,22 +83,34 @@ class Peserta extends CI_Controller {
                 }else{
                         // Timpa gambar lama jadi baru
                         $user = $this->m_user->get_data($id_user);
-                        if ($user->image != "" ) {
+                        if ($user->image == "default.jpg" ) {
+				$upload_data = array('uploads' => $this->upload->data());
+				$config['image_library'] = 'gd2';
+				$config['source_image'] = './assets/images/user/'.$upload_data['uploads']['file_name'];
+				$this->load->library('image_lib', $config);    
+				$data = array(
+					'id_user' => $id_user,
+					'nama_user' => $this->input->post('nama_user'),
+					'image' => $upload_data['uploads']['file_name'],
+					);
+				$this->m_user->update($data);
+				$this->session->set_flashdata('pesan', 'Profil berhasil diedit !!!!');
+				redirect('peserta/my_profil');
+                        }else{
                                 unlink('./assets/images/user/'.$user->image);
-                        }
-                        $upload_data = array('uploads' => $this->upload->data());
-                        $config['image_library'] = 'gd2';
-                        $config['source_image'] = './assets/images/user/'.$upload_data['uploads']['file_name'];
-                        $this->load->library('image_lib', $config);    
-                        $data = array(
-                                'id_user' => $id_user,
-                                'nama_user' => $this->input->post('nama_user'),
-                                'image' => $upload_data['uploads']['file_name'],
-                                );
-                        $this->m_user->update($data);
-                        $this->session->set_flashdata('pesan', 'Profil berhasil diedit !!!!');
-                        redirect('peserta/my_profil');
-                        
+				$upload_data = array('uploads' => $this->upload->data());
+				$config['image_library'] = 'gd2';
+				$config['source_image'] = './assets/images/user/'.$upload_data['uploads']['file_name'];
+				$this->load->library('image_lib', $config);    
+				$data = array(
+					'id_user' => $id_user,
+					'nama_user' => $this->input->post('nama_user'),
+					'image' => $upload_data['uploads']['file_name'],
+					);
+				$this->m_user->update($data);
+				$this->session->set_flashdata('pesan', 'Profil berhasil diedit !!!!');
+				redirect('peserta/my_profil');
+			}
                 }
 
                 $data = array(

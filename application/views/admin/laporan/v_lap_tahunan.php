@@ -21,7 +21,7 @@
                         </div>
                         <div class="top-left">
                                 <div class="graphic-path">
-                                        <p>Kode Laporan</p>
+                                        <p>Lap.Tahunan</p>
                                 </div>
                                 <div class="position-relative">
                                         <?php 

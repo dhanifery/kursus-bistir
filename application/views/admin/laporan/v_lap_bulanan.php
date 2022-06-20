@@ -21,7 +21,7 @@
                         </div>
                         <div class="top-left">
                                 <div class="graphic-path">
-                                        <p>Kode Laporan</p>
+                                        <p>Lap.Bulanan</p>
                                 </div>
                                 <div class="position-relative">
                                         <?php 
@@ -79,7 +79,6 @@
                                  </div>
                         </div>
                 </section>
-
                 <footer>
                         <div class="row">
                         <div class="col-12">
